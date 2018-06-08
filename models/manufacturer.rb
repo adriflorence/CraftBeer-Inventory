@@ -12,4 +12,11 @@ class Manufacturer
     @name = options['name']
   end
 
+  def save()
+    sql = "INSERT INTO manufacturers (name) VALUES ($1) RETURNING id"
+    values = [@name]
+    manu_data = SqlRunner.run(sql, values)
+    @id = manu_data.first()['id'].to_i
+  end
+
 end

@@ -12,4 +12,11 @@ class Category
     @name = options['name']
   end
 
+  def save()
+    sql = "INSERT INTO categories (name) VALUES ($1) RETURNING id"
+    values = [@name]
+    cat_data = SqlRunner.run(sql, values)
+    @id = cat_data.first()['id'].to_i
+  end
+
 end

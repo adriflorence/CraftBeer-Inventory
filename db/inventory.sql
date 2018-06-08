@@ -16,9 +16,11 @@ CREATE TABLE manufacturers (
 CREATE TABLE products (
   id serial4 primary key,
   manufacturer_id INT8 REFERENCES manufacturers(id) ON DELETE CASCADE,
-  category_id INT8 REFERENCES categories(id) ON DELETE CASCASE,
+  category_id INT8 REFERENCES categories(id) ON DELETE CASCADE,
+  name varchar(255),
   description varchar(255),
   quantity INT2,
+  unit varchar(255),
   ideal_amount INT2,
   cost_price INT2,
   sell_price INT2
