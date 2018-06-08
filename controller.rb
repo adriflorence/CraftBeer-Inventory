@@ -11,3 +11,7 @@ end
 get '/main' do
   erb(:main)
 end
+
+get '/main/full_stock' do
+  erb(:full_stock)
+end

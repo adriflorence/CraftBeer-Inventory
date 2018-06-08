@@ -12,12 +12,9 @@ body {
 .container {
   border: solid 1px black;
   display: flex;
-  /* container MUST have height for the flex-basis to happen in the media query  */
   min-height: 500px;
   flex-direction: row;
-  width: 900px;
-  margin: 10px auto;
-  position: relative;
+  margin: 0px auto;
 }
 
 p {
@@ -45,9 +42,108 @@ input[type=submit]:hover {
     color: white;
 }
 
-/* INDEX.erb */
+#login_image {
+  width: 260px;
+  margin: 0px auto;
+}
 
+/* MENU */
 
+#menu {
+    width: 750px;
+    margin: 0px auto;
+    height: 100px;
+    z-index: 5;
+}
+
+ul {
+    list-style-type: none;
+    margin:0;
+    padding:0;
+    position: absolute;
+}
+li {
+    display: inline-block;
+    float: left;
+    margin-right: 1px;
+}
+
+li a {
+    display:block;
+    min-width:150px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #fff;
+    background: #2f3036;
+    text-decoration: none;
+}
+
+li ul {
+    display: none;
+}
+
+li ul li {
+    display: block;
+    float: none;
+}
+
+li ul li a {
+    width: auto;
+    min-width: 100px;
+    padding: 0 20px;
+}
+
+ul li a:hover + .hidden, .hidden:hover {
+    display: block;
+}
+
+/* styling */
+
+li:hover a {
+    background: #85BA4D;
+}
+
+li:hover ul a {
+    background: #f3f3f3;
+    color: #2f3036;
+    height: 40px;
+    line-height: 40px;
+    overflow: visible;
+}
+
+li:hover ul a:hover {
+    background: #85BA4D;
+    color: #fff;
+}
+
+/* MAIN.erb */
+
+.flex-container {
+  width: 800px;
+  display: flex;
+  justify-content: center;
+}
+
+.flex-container > div {
+  margin: 5px;
+  border: 2px solid #2874A6;
+  width: 220px;
+  height: 220px;
+}
+
+.image img {
+  width: 220px;
+  height: 220px;
+	backface-visibility: hidden;
+	opacity: 1;
+  overflow:hidden;
+}
+
+.image:hover {
+    transform: scale(1.1);
+}
 
 /* SUBPAGES */
 
@@ -83,4 +179,18 @@ input[type=submit]:hover {
 
 .green {
   background-color: #005D4B;
+}
+
+
+/* FOOTER */
+
+.footer {
+  position: absolute;
+  bottom:0;
+  height: 40px;
+  width: 100%;
+  background-color: #85BA4D;
+  color: #365663;
+  padding: 10px;
+  font-size: 40px;
 }
