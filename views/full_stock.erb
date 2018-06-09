@@ -22,24 +22,12 @@
 </nav>
 <article class="container">
   <h1> Here's all your stock listed </h1>
-    <div class="flex-container">
-      <div class="image">
-        <a href="/main/full_stock">
-          <img src="/img/no-image.gif"/>
-          <div class="text">Milk 1L</div>
-        </a>
-      </div>
-      <div class="image">
-        <a href="/main/stock_count">
-          <img src="/img/no-image.gif"/>
-          <div class="text">Flour 1kg</div>
-        </a>
-      </div>
-      <div class="image">
-        <a href="/main/waste">
-          <img src="/img/no-image.gif"/>
-          <div class="text">Carrot</div>
-        </a>
-      </div>
-    </div>
+  <div class="flex-container">
+      <% for product in @products %>
+        <div class="image">
+            <img src="/img/no-image.gif"/>
+            <p> <a href="/products/<%= product.id%>"> <%= product.name %> </a></p>
+        </div>
+      <% end %>
+  </div>
 </article>

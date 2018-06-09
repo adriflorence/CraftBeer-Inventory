@@ -1,30 +1,30 @@
 <h1> Products based on stock level </h1>
 
-<div class="container">
-
-    <div class="box red">
-        <p>LOW</p>
-        <a> product1 </a>
-        <a> product2 </a>
-        <a> product3 </a>
-        <a> product4 </a>
-    </div>
-    <div class="box amber">
-        <p>Medium</p>
-        <a> product1 </a>
-        <a> product2 </a>
-        <a> product3 </a>
-    </div>
-    <div class="box green">
-        <p>High</p>
-        <a> product1 </a>
-        <a> product2 </a>
-        <a> product3 </a>
-        <a> product4 </a>
-        <a> product5 </a>
-        <a> product6 </a>
-        <a> product7 </a>
-        <a> product8 </a>
-    </div>
-
-</div>
+<article class="container">
+  <section id="levels">
+      <article class="box red">
+          <p>LOW</p>
+          <% for product in @products %>
+            <% if product.quantity < product.ideal_amount %>
+                <p> <a href="/products/<%= product.id%>"> <%= product.name %> </a></p>
+            <% end %>
+          <% end %>
+      </article>
+      <article class="box amber">
+          <p>Medium</p>
+          <% for product in @products %>
+            <% if product.quantity <= product.ideal_amount * 1.1  && product.quantity >= product.ideal_amount %>
+                <p> <a href="/products/<%= product.id%>"> <%= product.name %> </a></p>
+            <% end %>
+          <% end %>
+      </article>
+      <article class="box green">
+          <p>High</p>
+          <% for product in @products %>
+            <% if product.quantity > product.ideal_amount * 1.1 %>
+                <p> <a href="/products/<%= product.id%>"> <%= product.name %> </a></p>
+            <% end %>
+          <% end %>
+      </article>
+  </section>
+</article>

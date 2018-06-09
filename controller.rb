@@ -13,10 +13,12 @@ get '/main' do
 end
 
 get '/main/full_stock' do
+  @products = Product.all()
   erb(:full_stock)
 end
 
 get '/main/stock_levels' do
+  @products = Product.all()
   erb(:stock_levels)
 end
 

@@ -28,6 +28,18 @@ category5.save()
 category6.save()
 
 product1 = Product.new({
+  "name" => "apple",
+  "manufacturer_id" => manufacturer2.id,
+  "category_id" => category2.id,
+  "description" => "big round red apples",
+  "quantity" => 10,
+  "unit" => "piece",
+  "ideal_amount" => 10,
+  "cost_price" => 0.5,
+  "sell_price" => 1
+})
+
+product2 = Product.new({
   "name" => "carrot",
   "manufacturer_id" => manufacturer2.id,
   "category_id" => category1.id,
@@ -39,7 +51,31 @@ product1 = Product.new({
   "sell_price" => 2
 })
 
-product2 = Product.new({
+product3 = Product.new({
+  "name" => "tomato",
+  "manufacturer_id" => manufacturer2.id,
+  "category_id" => category1.id,
+  "description" => "super ripe 'matos",
+  "quantity" => 20,
+  "unit" => "piece",
+  "ideal_amount" => 30,
+  "cost_price" => 0.8,
+  "sell_price" => 1
+})
+
+product4 = Product.new({
+  "name" => "potato",
+  "manufacturer_id" => manufacturer2.id,
+  "category_id" => category1.id,
+  "description" => "Potato, Solanum tuberosum, is an herbaceous perennial plant in the family Solanaceae which is grown for its edible tubers. ",
+  "quantity" => 50,
+  "unit" => "kg",
+  "ideal_amount" => 80,
+  "cost_price" => 0.3,
+  "sell_price" => 0.8
+})
+
+product5 = Product.new({
   "name" => "flour",
   "manufacturer_id" => manufacturer3.id,
   "category_id" => category1.id,
@@ -51,7 +87,7 @@ product2 = Product.new({
   "sell_price" => 3
 })
 
-product3 = Product.new({
+product6 = Product.new({
   "name" => "milk",
   "manufacturer_id" => manufacturer1.id,
   "category_id" => category3.id,
@@ -63,6 +99,22 @@ product3 = Product.new({
   "sell_price" => 2
 })
 
+product7 = Product.new({
+  "name" => "cheese",
+  "manufacturer_id" => manufacturer1.id,
+  "category_id" => category3.id,
+  "description" => "block of cheese",
+  "quantity" => 4,
+  "unit" => "500g",
+  "ideal_amount" => 10,
+  "cost_price" => 3,
+  "sell_price" => 8
+})
+
 product1.save()
 product2.save()
 product3.save()
+product4.save()
+product5.save()
+product6.save()
+product7.save()
