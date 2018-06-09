@@ -10,9 +10,11 @@ Manufacturer.delete_all()
 manufacturer1 = Manufacturer.new({"name" => "Scottish Dairy", "phone" => "123123123"})
 manufacturer2 = Manufacturer.new({"name" => "Pillars of Hercules", "phone" => "123123123"})
 manufacturer3 = Manufacturer.new({"name" => "Grow Wild Organics", "phone" => "123123123"})
+manufacturer4 = Manufacturer.new({"name" => "Tapa Organic Bakery", "phone" => "123123123"})
 manufacturer1.save()
 manufacturer2.save()
 manufacturer3.save()
+manufacturer4.save()
 
 category1 = Category.new({"name" => "vegetables"})
 category2 = Category.new({"name" => "fruit"})
@@ -20,12 +22,18 @@ category3 = Category.new({"name" => "dairy"})
 category4 = Category.new({"name" => "legumes"})
 category5 = Category.new({"name" => "drinks"})
 category6 = Category.new({"name" => "condiments"})
+category7 = Category.new({"name" => "meat"})
+category8 = Category.new({"name" => "bakery"})
+category9 = Category.new({"name" => "fish"})
 category1.save()
 category2.save()
 category3.save()
 category4.save()
 category5.save()
 category6.save()
+category7.save()
+category8.save()
+category9.save()
 
 product1 = Product.new({
   "name" => "apple",
@@ -111,6 +119,18 @@ product7 = Product.new({
   "sell_price" => 8
 })
 
+product8 = Product.new({
+  "name" => "wholegrain bread",
+  "manufacturer_id" => manufacturer4.id,
+  "category_id" => category8.id,
+  "description" => "fresh loaf",
+  "quantity" => 40,
+  "unit" => "500g",
+  "ideal_amount" => 30,
+  "cost_price" => 1,
+  "sell_price" => 2
+})
+
 product1.save()
 product2.save()
 product3.save()
@@ -118,3 +138,4 @@ product4.save()
 product5.save()
 product6.save()
 product7.save()
+product8.save()

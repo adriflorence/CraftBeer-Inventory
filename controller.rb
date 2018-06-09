@@ -23,7 +23,7 @@ get '/main/stock_levels' do
 end
 
 get '/main/categories' do
-  @products = Product.all()
+  @categories = Category.all()
   erb(:categories)
 end
 
@@ -35,4 +35,12 @@ end
 get '/main/manufacturers/:id' do
   @manufacturer = Manufacturer.find(params[:id])
   erb(:manufacturer)
+end
+
+# # # #
+
+get '/main/new_product' do
+  @manufacturers = Manufacturer.all()
+  @categories = Category.all()
+  erb(:new_product)
 end

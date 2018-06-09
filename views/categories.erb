@@ -1,31 +1,33 @@
-<nav id="menu">
-  <ul>
-      <li>
-          <a href="#">View Stock</a>
-          <ul class="hidden">
-              <li><a href="/main/full_stock">Full Stock</a></li>
-              <li><a href="/main/stock_levels">Stock Levels</a></li>
-              <li><a href="/main/categories">Categories</a></li>
-          </ul>
-      </li>
-      <li>
-          <a href="#">Sales</a>
-          <ul class="hidden">
-              <li><a href="#">Targets</a></li>
-              <li><a href="#">Waste</a></li>
-          </ul>
-      </li>
-      <li><a href="#">Messages?</a></li>
-      <li><a href="manufacturers">Manufacturers</a></li>
-      <li><a href="/">Log Out!</a></li>
-  </ul>
-</nav>
+<section id="menu_bar">
+  <nav id="menu">
+    <ul>
+        <li>
+            <a href="#">View Stock</a>
+            <ul class="hidden">
+                <li><a href="/main/full_stock">Full Stock</a></li>
+                <li><a href="/main/stock_levels">Stock Levels</a></li>
+                <li><a href="/main/categories">Categories</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">Sales</a>
+            <ul class="hidden">
+                <li><a href="#">Targets</a></li>
+                <li><a href="#">Waste</a></li>
+            </ul>
+        </li>
+        <li><a href="new_product">Add Product</a></li>
+        <li><a href="manufacturers">Manufacturers</a></li>
+        <li><a href="/">Log Out!</a></li>
+    </ul>
+  </nav>
+</section>
 <article class="container">
   <div class="flex-container">
-      <% for product in @products %>
+      <% for category in @categories %>
         <div class="image">
-            <img src="/img/no-image.gif"/>
-            <p> <a href="/products/<%= product.id%>"> <%= product.name %> </a></p>
+            <img src="/img/<%= category.name %>.png"/>
+            <p> <a href="/categories/<%= category.id%>"> <%= category.name %> </a></p>
         </div>
       <% end %>
   </div>

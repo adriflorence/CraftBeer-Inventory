@@ -40,6 +40,8 @@ a {
   text-decoration: none;
 }
 
+/* BUTTON */
+
 .button_div input{
   display:block;
   margin: 0px auto;
@@ -68,11 +70,15 @@ input[type=submit]:hover {
 
 /* MENU */
 
+#menu_bar {
+    width: 100%;
+    background: #2f3036;
+}
+
 #menu {
-    width: 750px;
+    width: 755px;
     margin: 0px auto;
-    height: 100px;
-    z-index: 5;
+    height: 50px;
 }
 
 ul {
@@ -135,11 +141,35 @@ li:hover ul a:hover {
     color: #fff;
 }
 
-/* MAIN.erb */
+/* ADD NEW ITEM STYLE */
+#new_item {
+  border: 2px solid #2874A6;
+  padding: 10px 30px;
+  background-color: #ccc;
+}
+
+#new_item input[type=text], #new_item input[type=number], #new_item select {
+    width: 100%;
+    border: 1px solid #ccc;
+    resize: vertical;
+    color: #365663;
+    padding: 10px;
+    margin: 8px auto;
+}
+
+#new_item label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+}
+
+/* CATEGORIES.erb */
 
 .flex-container {
+  width: 600px;
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
+  margin: 15px auto;
 }
 
 .flex-container > div {
@@ -147,6 +177,12 @@ li:hover ul a:hover {
   border: 2px solid #2874A6;
   width: 150px;
   height: 150px;
+}
+
+.flex-container > div a {
+  position: relative;
+  bottom: 45px;
+  left: 10px;
 }
 
 .image img {
@@ -161,7 +197,7 @@ li:hover ul a:hover {
     transform: scale(1.1);
 }
 
-/* FULL STOCK LIST VIEW on full_stock.erb */
+/* FULL_STOCK.erb LIST VIEW */
 
 .full_stock_table {
   margin: 40px auto;
@@ -171,7 +207,7 @@ table.full_stock_table {
   width: 100%;
   background-color: #eee;
   border-collapse: collapse;
-  border: 2px solid #31873d;
+  border: 1px solid #31873d;
   color: black;
 }
 
@@ -210,7 +246,6 @@ table.full_stock_table thead {
 }
 
 .box {
-  /* flex basis is width when horizontal, and height when vertial */
   flex-basis: 10px;
   flex-grow: 1;
   text-align: center;
