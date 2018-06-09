@@ -58,4 +58,12 @@ class Product
     return Category.new(result[0])
   end
 
+  def manufacturer()
+    sql = "SELECT manufacturers.name FROM manufacturers INNER JOIN products
+    ON manufacturers.id = products.manufacturer_id WHERE products.id = $1"
+    values = [@id]
+    result = SqlRunner.run(sql, values)
+    return Manufacturer.new(result[0])
+  end
+
 end

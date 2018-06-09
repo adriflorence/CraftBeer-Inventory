@@ -33,4 +33,8 @@ class ManufacturerTest < MiniTest::Test
     assert_equal("123123123", @manufacturer.phone)
   end
 
+  def test_product_names
+    assert_equal("milk", @manufacturer.products.name)
+  end
+
 end

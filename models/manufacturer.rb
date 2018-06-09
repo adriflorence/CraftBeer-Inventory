@@ -1,8 +1,6 @@
 require( 'pry-byebug' )
 require_relative('../db/sql_runner')
 
-require_relative("../specs/manufacturer_spec.rb")
-
 require_relative("product.rb")
 
 class Manufacturer
@@ -45,11 +43,11 @@ class Manufacturer
   # # # #
 
   def products()
-    sql = "SELECT * FROM products INNER JOIN manufacturers ON
+    sql = "SELECT products.name FROM products INNER JOIN manufacturers ON
     manufacturers.id = products.manufacturer_id WHERE manufacturers.id = $1"
     values = [@id]
     products = SqlRunner.run(sql, values)
-    return products.map{|product| Product.new(product)}
+    return products.map{|product| Product.new(product)}.first
   end
 
 end

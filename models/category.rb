@@ -38,4 +38,14 @@ class Category
     SqlRunner.run(sql)
   end
 
+  # # # #
+
+  def products()
+    sql = "SELECT products.name FROM products INNER JOIN categories ON
+    categories.id = products.category_id WHERE categories.id = $1"
+    values = [@id]
+    products = SqlRunner.run(sql, values)
+    return products.map{|product| Product.new(product)}
+  end
+
 end
