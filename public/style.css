@@ -1,8 +1,25 @@
 /* BASIC LAYOUT */
 
+*:before,
+*:after {
+ box-sizing: border-box;
+}
+
+html,
 body {
   background-color: #365663;
   color: #85BA4D;
+  height: 100%;
+  position: relative;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.main-container {
+ min-height: 100vh;
+ overflow: hidden;
+ display: block;
+ position: relative;
+ padding-bottom: 200px;
 }
 
 #header, h1 {
@@ -10,7 +27,8 @@ body {
 }
 
 .container {
-  margin: 0px auto;
+  width: 960px;
+  margin: 40px auto 100px;
 }
 
 p {
@@ -100,8 +118,6 @@ ul li a:hover + .hidden, .hidden:hover {
     display: block;
 }
 
-/* styling */
-
 li:hover a {
     background: #85BA4D;
 }
@@ -122,7 +138,6 @@ li:hover ul a:hover {
 /* MAIN.erb */
 
 .flex-container {
-  width: 800px;
   display: flex;
   justify-content: center;
 }
@@ -144,6 +159,43 @@ li:hover ul a:hover {
 
 .image:hover {
     transform: scale(1.1);
+}
+
+/* FULL STOCK LIST VIEW on full_stock.erb */
+
+.full_stock_table {
+  margin: 40px auto;
+}
+
+table.full_stock_table {
+  width: 100%;
+  background-color: #eee;
+  border-collapse: collapse;
+  border: 2px solid #31873d;
+  color: black;
+}
+
+table.full_stock_table td, table.full_stock_table th {
+
+  border-width: 2px;
+  border-color: #31873d;
+  border-style: solid;
+  padding: 2px 10px;
+}
+
+table.full_stock_table thead {
+  background-color: #76ce1b;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.ellipsis {
+    max-width: 160px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
 }
 
 /* STOCK LEVELS */
@@ -196,11 +248,14 @@ li:hover ul a:hover {
 
 .footer {
   position: absolute;
-  bottom:0;
-  height: 40px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 200px;
   width: 100%;
   background-color: #85BA4D;
   color: #365663;
   padding: 10px;
   font-size: 40px;
+  text-align: center;
 }

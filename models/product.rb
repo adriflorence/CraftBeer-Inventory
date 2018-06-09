@@ -6,7 +6,7 @@ require_relative("category.rb")
 class Product
 
   attr_reader :id
-  attr_accessor :name, :manufacturer_id, :category_id, :description, :quantity, :ideal_amount, :shelf_life, :cost_price, :sell_price
+  attr_accessor :name, :manufacturer_id, :category_id, :description, :quantity, :unit, :ideal_amount, :shelf_life, :cost_price, :sell_price
 
   def initialize(options)
     @id = options['id'].to_i

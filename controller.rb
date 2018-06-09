@@ -23,6 +23,7 @@ get '/main/stock_levels' do
 end
 
 get '/main/categories' do
+  @products = Product.all()
   erb(:categories)
 end
 
