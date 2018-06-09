@@ -19,4 +19,23 @@ class Category
     @id = cat_data.first()['id'].to_i
   end
 
+  def self.find(id)
+    sql = "SELECT * FROM categories WHERE id = $1"
+    values = [id]
+    category = SqlRunner.run(sql, values)
+    return Category.new(category.first)
+  end
+
+  def self.all()
+    sql = "SELECT * FROM categories"
+    categories = SqlRunner.run( sql )
+    result = categories.map { |category| Category.new( category ) }
+    return result
+  end
+
+  def self.delete_all()
+    sql = "DELETE FROM categories"
+    SqlRunner.run(sql)
+  end
+
 end

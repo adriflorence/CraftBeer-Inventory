@@ -10,7 +10,8 @@ CREATE TABLE categories (
 
 CREATE TABLE manufacturers (
   id serial8 primary key,
-  name varchar(255)
+  name varchar(255),
+  phone varchar(255) -- format?
 );
 
 CREATE TABLE products (

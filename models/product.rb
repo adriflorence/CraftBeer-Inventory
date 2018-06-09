@@ -30,4 +30,32 @@ class Product
     @id = product_data.first()['id'].to_i
   end
 
+  def self.find(id)
+    sql = "SELECT * FROM products WHERE id = $1"
+    values = [id]
+    product = SqlRunner.run(sql, values)
+    return Product.new(product.first)
+  end
+
+  def self.all()
+    sql = "SELECT * FROM products"
+    products = SqlRunner.run( sql )
+    result = products.map { |product| Product.new( product ) }
+    return result
+  end
+
+  def self.delete_all()
+    sql = "DELETE FROM products"
+    SqlRunner.run(sql)
+  end
+
+  # # # #
+
+  def category()
+    sql = "SELECT name FROM categories WHERE id = $1"
+    values = [@category_id]
+    result = SqlRunner.run(sql, values)
+    return Category.new(result[0])
+  end
+
 end

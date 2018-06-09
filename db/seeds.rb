@@ -3,13 +3,13 @@ require_relative('../models/manufacturer.rb')
 require_relative('../models/product.rb')
 require('pry-byebug')
 
-# Product.delete_all()
-# Category.delete_all()
-# Manufacturer.delete_all()
+Product.delete_all()
+Category.delete_all()
+Manufacturer.delete_all()
 
-manufacturer1 = Manufacturer.new({"name" => "Scottish Dairy"})
-manufacturer2 = Manufacturer.new({"name" => "Pillars of Hercules"})
-manufacturer3 = Manufacturer.new({"name" => "Grow Wild Organics"})
+manufacturer1 = Manufacturer.new({"name" => "Scottish Dairy", "phone" => "123123123"})
+manufacturer2 = Manufacturer.new({"name" => "Pillars of Hercules", "phone" => "123123123"})
+manufacturer3 = Manufacturer.new({"name" => "Grow Wild Organics", "phone" => "123123123"})
 manufacturer1.save()
 manufacturer2.save()
 manufacturer3.save()
@@ -37,7 +37,7 @@ product1 = Product.new({
   "ideal_amount" => 30,
   "cost_price" => 1,
   "sell_price" => 2
-  })
+})
 
 product2 = Product.new({
   "name" => "flour",
@@ -49,9 +49,20 @@ product2 = Product.new({
   "ideal_amount" => 20,
   "cost_price" => 1,
   "sell_price" => 3
-  })
+})
+
+product3 = Product.new({
+  "name" => "milk",
+  "manufacturer_id" => manufacturer1.id,
+  "category_id" => category3.id,
+  "description" => "straight from the cow",
+  "quantity" => 5,
+  "unit" => "box",
+  "ideal_amount" => 20,
+  "cost_price" => 1,
+  "sell_price" => 2
+})
 
 product1.save()
 product2.save()
-
-# product1.save()
+product3.save()

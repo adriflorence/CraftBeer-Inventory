@@ -15,3 +15,21 @@ end
 get '/main/full_stock' do
   erb(:full_stock)
 end
+
+get '/main/stock_levels' do
+  erb(:stock_levels)
+end
+
+get '/main/categories' do
+  erb(:categories)
+end
+
+get '/main/manufacturers' do
+  @manufacturers = Manufacturer.all()
+  erb(:manufacturers)
+end
+
+get '/main/manufacturers/:id' do
+  @manufacturer = Manufacturer.find(params[:id])
+  erb(:manufacturer)
+end

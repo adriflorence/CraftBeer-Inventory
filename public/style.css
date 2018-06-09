@@ -21,6 +21,11 @@ p {
   max-height: 20px;
 }
 
+a {
+  color: white;
+  text-decoration: none;
+}
+
 .button_div input{
   display:block;
   margin: 0px auto;
@@ -129,13 +134,13 @@ li:hover ul a:hover {
 .flex-container > div {
   margin: 5px;
   border: 2px solid #2874A6;
-  width: 220px;
-  height: 220px;
+  width: 150px;
+  height: 150px;
 }
 
 .image img {
-  width: 220px;
-  height: 220px;
+  width: 150px;
+  height: 150px;
 	backface-visibility: hidden;
 	opacity: 1;
   overflow:hidden;
