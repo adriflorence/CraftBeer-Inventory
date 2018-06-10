@@ -4,9 +4,9 @@
         <li>
             <a href="#">View Stock</a>
             <ul class="hidden">
-                <li><a href="full_stock">Full Stock</a></li>
-                <li><a href="stock_levels">Stock Levels</a></li>
-                <li><a href="categories">Categories</a></li>
+                <li><a href="/full_stock">Full Stock</a></li>
+                <li><a href="/stock_levels">Stock Levels</a></li>
+                <li><a href="/categories">Categories</a></li>
             </ul>
         </li>
         <li>
@@ -17,7 +17,7 @@
             </ul>
         </li>
         <li><a href="#">Messages?</a></li>
-        <li><a href="manufacturers">Manufacturers</a></li>
+        <li><a href="/manufacturers">Manufacturers</a></li>
         <li><a href="/">Log Out!</a></li>
     </ul>
   </nav>
@@ -25,6 +25,6 @@
 <article class="container">
     <h1> LIST OF YOUR MANUFACTURERS: </h1>
     <% for manufacturer in @manufacturers %>
-        <p> <a href="/main/manufacturers/<%= manufacturer.id%>"> <%= manufacturer.name %> </a></p>
+        <p> <a href="/manufacturers/<%= manufacturer.id%>"> <%= manufacturer.name %> </a></p>
     <% end %>
 </article>
