@@ -22,9 +22,3 @@
     </ul>
   </nav>
 </section>
-<article class="container">
-    <h1> LIST OF YOUR MANUFACTURERS: </h1>
-    <% for manufacturer in @manufacturers %>
-        <p> <a href="/manufacturers/<%= manufacturer.id%>"> <%= manufacturer.name %> </a></p>
-    <% end %>
-</article>

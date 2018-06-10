@@ -24,11 +24,13 @@ get '/categories' do
 end
 
 get '/manufacturers' do
+  @products = Product.all()
   @manufacturers = Manufacturer.all()
   erb(:manufacturers)
 end
 
 get '/manufacturers/:id' do
+  @products = Product.all()
   @manufacturer = Manufacturer.find(params[:id])
   erb(:manufacturer)
 end
@@ -42,10 +44,20 @@ get '/new_product' do
 end
 
 
+
+
 # # # #
 
 post '/full_stock' do
   @product= Product.new(params)
   @product.save()
+  redirect to '/full_stock'
+end
+
+post '/full_stock/:id/delete' do
+  id = params["id"].to_i
+  @product = Product.find(id)
+  # binding.pry
+  @product.delete()
   redirect to '/full_stock'
 end

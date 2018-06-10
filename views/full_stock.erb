@@ -38,6 +38,8 @@
             <th>Ideal Amount</th>
             <th>Buy For</th>
             <th>Sell For</th>
+            <th>Edit</th>
+            <th>Del</th>
           </tr>
         </thead>
         <tbody>
@@ -51,7 +53,7 @@
                   <p> <%= product.name %> </p>
               </td>
               <td>
-                  <p> <%= product.manufacturer.name %> </p>
+                  <p> <a href="/manufacturers/<%=product.manufacturer_id%>"><%= product.manufacturer.name %> </a></p>
               </td>
               <td>
                   <p> <%= product.category.name %> </p>
@@ -73,6 +75,16 @@
               </td>
               <td class="text-center">
                   <p> <%= product.sell_price %> </p>
+              </td>
+              <td class="text-center">
+                <form method="get" action="/full_stock/<%= product.id %>/edit">
+                    <p><input type="image" src="/img/edit.png"/></p>
+                </form>
+              </td>
+              <td class="text-center">
+                <form method="post" action="/full_stock/<%= product.id %>/delete">
+                    <p><input type="image" src="/img/delete.png"/></p>
+                </form>
               </td>
             </tr>
             <% end %>

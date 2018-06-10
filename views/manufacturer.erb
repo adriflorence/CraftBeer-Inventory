@@ -1,27 +1,92 @@
-<nav id="menu">
-  <ul>
-      <li>
-          <a href="#">View Stock</a>
-          <ul class="hidden">
-              <li><a href="full_stock">Full Stock</a></li>
-              <li><a href="stock_levels">Stock Levels</a></li>
-              <li><a href="categories">Categories</a></li>
-          </ul>
-      </li>
-      <li>
-          <a href="#">Sales</a>
-          <ul class="hidden">
-              <li><a href="#">Targets</a></li>
-              <li><a href="#">Waste</a></li>
-          </ul>
-      </li>
-      <li><a href="#">Messages?</a></li>
-      <li><a href="manufacturers">Manufacturers</a></li>
-      <li><a href="/">Log Out!</a></li>
-  </ul>
-</nav>
-
-<article id="">
-    <p>Name: <%= @manufacturer.name %></p>
+<section id="menu_bar">
+  <nav id="menu">
+    <ul>
+        <li>
+            <a href="#">View Stock</a>
+            <ul class="hidden">
+                <li><a href="/full_stock">Full Stock</a></li>
+                <li><a href="/stock_levels">Stock Levels</a></li>
+                <li><a href="/categories">Categories</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">Sales?</a>
+            <ul class="hidden">
+                <li><a href="#">Targets</a></li>
+                <li><a href="#">Waste</a></li>
+            </ul>
+        </li>
+        <li><a href="/new_product">Add Product</a></li>
+        <li><a href="/manufacturers">Manufacturers</a></li>
+        <li><a href="/">Log Out!</a></li>
+    </ul>
+  </nav>
+</section>
+<article class="container">
+  <h1> All products from <%= @manufacturer.name %>: </h1>
     <p>Phone number: <%= @manufacturer.phone %></p>
+
+      <table class="full_stock_table">
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Category</th>
+            <th>Quantity</th>
+            <th>Unit</th>
+            <th>Ideal Amount</th>
+            <th>Buy For</th>
+            <th>Sell For</th>
+            <th>Edit</th>
+            <th>Del</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% for product in @products %>
+            <% if @manufacturer.id == product.manufacturer_id %>
+              <tr>
+                <td class="text-center">
+                    <p>  <%= product.id %> </p>
+                </td>
+                <td>
+                    <p> <%= product.name %> </p>
+                </td>
+                <td>
+                    <p> <%= product.category.name %> </p>
+                </td>
+                <!-- <td class="ellipsis">
+                    <p> <%= product.description %> </p>
+                </td> -->
+                <td class="text-center">
+                    <p> <%= product.quantity %> </p>
+                </td>
+                <td class="text-center">
+                    <p> <%= product.unit %> </p>
+                </td>
+                <td class="text-center">
+                    <p> <%= product.ideal_amount %> </p>
+                </td>
+                <td class="text-center">
+                    <p> <%= product.cost_price %> </p>
+                </td>
+                <td class="text-center">
+                    <p> <%= product.sell_price %> </p>
+                </td>
+                <td class="text-center">
+                  <form method="get" action="/products/<%= product.id %>/edit">
+                      <p><input type="image" src="/img/edit.png"/></p>
+                  </form>
+                </td>
+                <td class="text-center">
+                  <form method="post" action="/products/<%= product.id %>/delete">
+                      <p><input type="image" src="/img/delete.png"/></p>
+                  </form>
+                </td>
+              </tr>
+            <% end %>
+            <% end %>
+
+        </tbody>
+      </table>
+
 </article>
