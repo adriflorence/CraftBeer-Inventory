@@ -4,21 +4,68 @@
         <li>
             <a href="#">View Stock</a>
             <ul class="hidden">
-                <li><a href="/full_stock">Full Stock</a></li>
+                <li><a href="/products">Full Stock</a></li>
                 <li><a href="/stock_levels">Stock Levels</a></li>
                 <li><a href="/categories">Categories</a></li>
             </ul>
         </li>
         <li>
-            <a href="#">Sales</a>
+            <a href="#">Add New</a>
             <ul class="hidden">
-                <li><a href="#">Targets</a></li>
-                <li><a href="#">Waste</a></li>
+                <li><a href="/products/new_product">Product</a></li>
+                <li><a href="/categories/new_category">Category</a></li>
+                <li><a href="/manufacturers/new_manufacturer">Manufacturer</a></li>
             </ul>
         </li>
-        <li><a href="/new_product">Add Product</a></li>
         <li><a href="/manufacturers">Manufacturers</a></li>
-        <li><a href="/">Log Out!</a></li>
+        <li><a href="">About</a></li>
+        <li><a href="/" id="exit"></i>Log Out!</a></li>
     </ul>
   </nav>
 </section>
+<article class="container">
+  <h1> EDIT PRODUCT! </h1>
+    <div id="new_item">
+        <form method="post" action="/products/<%= @product.id %>">
+
+          <label for="name">Name: </label>
+          <input id="name" type="text" name="name" value= "<%= @product.name %>"/>
+          <br>
+
+          <label for="manufacturer_select">Select manufacturer:</label>
+          <select id="manufacturer_select" type="text" name="manufacturer_id">
+              <% for manufacturer in @manufacturers %>
+              <option value=<%=manufacturer.id%> <%= "selected" if @product.manufacturer_id == manufacturer.id%>><%= manufacturer.name%></option>
+              <% end %>
+          </select>
+          <br>
+
+          <label for="category_select">Select category:</label>
+          <select id="category_select" type="text" name="category_id">
+              <% for category in @categories %>
+              <option value=<%=category.id%> <%= "selected" if @product.category_id == category.id%>><%= category.name%></option>
+              <% end %>
+          </select>
+          <br>
+
+          <label for="quantity">Quantity:</label>
+          <input id="quantity" type="number" name="quantity" value= "<%= @product.quantity %>"/>
+          <br>
+
+          <label for="unit">Unit:</label>
+          <input id="unit" type="text" name="unit" value= "<%= @product.unit %>"/>
+          <br>
+
+          <label for="description">Description:</label>
+          <input id="description" type="textarea" name="description"/>
+          <br>
+
+          <label for="ideal_amount">Ideal Amount:</label>
+          <input id="ideal_amount" type="number" name="ideal_amount" value= "<%= @product.ideal_amount %>"/>
+          <br>
+
+          <input type="submit" value="Update Product"/>
+
+        </form>
+      </div>
+  </article>

@@ -24,14 +24,20 @@
   </nav>
 </section>
 <article class="container">
-  <div class="flex-container">
-      <% for category in @categories %>
-        <div class="image">
-          <a href="/categories/<%= category.id%>">
-            <img src="/img/<%= category.name %>.png"/>
-              <p> <%= category.name %> </p>
-            </a>
-        </div>
-      <% end %>
-  </div>
-</article>
+  <h1> Add a new manufacturer! </h1>
+    <div id="new_item">
+        <form method="post" action="/manufacturers">
+
+          <label for="name">Name: </label>
+          <input id="name" type="text" name="name"/>
+          <br>
+
+          <label for="phone">Phone: </label>
+          <input id="phone" type="text" name="phone"/>
+          <br>
+
+          <input type="submit" value="Add Manufacturer to Database"/>
+
+        </form>
+      </div>
+  </article>

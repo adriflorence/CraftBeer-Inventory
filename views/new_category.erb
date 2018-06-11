@@ -24,14 +24,16 @@
   </nav>
 </section>
 <article class="container">
-  <div class="flex-container">
-      <% for category in @categories %>
-        <div class="image">
-          <a href="/categories/<%= category.id%>">
-            <img src="/img/<%= category.name %>.png"/>
-              <p> <%= category.name %> </p>
-            </a>
-        </div>
-      <% end %>
-  </div>
-</article>
+  <h1> Add a new category! </h1>
+    <div id="new_item">
+        <form method="post" action="/categories">
+
+          <label for="name">Name: </label>
+          <input id="name" type="text" name="name"/>
+          <br>
+
+          <input type="submit" value="Add Category to Database"/>
+
+        </form>
+      </div>
+  </article>

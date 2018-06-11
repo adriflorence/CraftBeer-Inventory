@@ -4,21 +4,22 @@
         <li>
             <a href="#">View Stock</a>
             <ul class="hidden">
-                <li><a href="/full_stock">Full Stock</a></li>
+                <li><a href="/products">Full Stock</a></li>
                 <li><a href="/stock_levels">Stock Levels</a></li>
                 <li><a href="/categories">Categories</a></li>
             </ul>
         </li>
         <li>
-            <a href="#">Sales</a>
+            <a href="#">Add New</a>
             <ul class="hidden">
-                <li><a href="#">Targets</a></li>
-                <li><a href="#">Waste</a></li>
+                <li><a href="/products/new_product">Product</a></li>
+                <li><a href="/categories/new_category">Category</a></li>
+                <li><a href="/manufacturers/new_manufacturer">Manufacturer</a></li>
             </ul>
         </li>
-        <li><a href="/new_product">Add Product</a></li>
         <li><a href="/manufacturers">Manufacturers</a></li>
-        <li><a href="/">Log Out!</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/" id="exit"></i>Log Out!</a></li>
     </ul>
   </nav>
 </section>
@@ -26,29 +27,38 @@
 <h1> Products based on stock level </h1>
 <article class="container">
   <section id="levels">
-      <article class="box red">
-          <p>LOW</p>
-          <% for product in @products %>
-            <% if product.quantity < product.ideal_amount %>
-                <p> <a href="/products/<%= product.id%>"> <%= product.name %> </a></p>
+      <ul class="chart">
+        <li>
+          <article title="LOW" class="box red">
+            <% for product in @products %>
+              <% if product.quantity < product.ideal_amount %>
+                  <p> <a href="/products/<%= product.id%>"> <%= product.name %> </a></p>
+              <% end %>
             <% end %>
-          <% end %>
-      </article>
-      <article class="box amber">
-          <p>Medium</p>
-          <% for product in @products %>
-            <% if product.quantity <= product.ideal_amount * 1.1  && product.quantity >= product.ideal_amount %>
-                <p> <a href="/products/<%= product.id%>"> <%= product.name %> </a></p>
+          </article>
+          <h1>LOW</h1>
+        </li>
+
+        <li>
+          <article title="MED" class="box amber">
+            <% for product in @products %>
+              <% if product.quantity <= product.ideal_amount * 1.1  && product.quantity >= product.ideal_amount %>
+                  <p> <a href="/products/<%= product.id%>"> <%= product.name %> </a></p>
+              <% end %>
             <% end %>
-          <% end %>
-      </article>
-      <article class="box green">
-          <p>High</p>
-          <% for product in @products %>
-            <% if product.quantity > product.ideal_amount * 1.1 %>
-                <p> <a href="/products/<%= product.id%>"> <%= product.name %> </a></p>
+          </article>
+          <h1>MEDIUM</h1>
+        </li>
+        <li>
+          <article title="HIGH" class="box green">
+            <% for product in @products %>
+              <% if product.quantity > product.ideal_amount * 1.1 %>
+                  <p> <a href="/products/<%= product.id%>"> <%= product.name %> </a></p>
+              <% end %>
             <% end %>
-          <% end %>
-      </article>
+          </article>
+          <h1>HIGH</h1>
+        </li>
+      </ul>
   </section>
 </article>

@@ -21,6 +21,19 @@ class Manufacturer
     @id = manu_data.first()['id'].to_i
   end
 
+  def delete()
+    sql = "DELETE FROM manufacturers WHERE id = $1"
+    values = [@id]
+    SqlRunner.run(sql, values)
+  end
+
+  def update()
+    sql = "UPDATE manufacturers SET (name, phone) =
+    ($1, $2) WHERE id = $3"
+    values = [@name, @phone, @id]
+    SqlRunner.run(sql, values)
+  end
+
   def self.find(id)
     sql = "SELECT * FROM manufacturers WHERE id = $1"
     values = [id]

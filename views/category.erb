@@ -25,15 +25,14 @@
 </section>
 <article class="container">
   <section id="manufacturers">
-  <h1> All products from <%= @manufacturer.name %>: </h1>
-    <p>Phone number: <%= @manufacturer.phone %></p>
+  <h1> All <%= @category.name %> products: </h1>
 
       <table class="full_stock_table">
         <thead>
           <tr>
             <th>Id</th>
             <th>Name</th>
-            <th>Category</th>
+            <th>Manufacturer</th>
             <th>Quantity</th>
             <th>Unit</th>
             <th>Ideal Amount</th>
@@ -45,7 +44,7 @@
         </thead>
         <tbody>
           <% for product in @products %>
-            <% if @manufacturer.id == product.manufacturer_id %>
+            <% if @category.id == product.category_id %>
               <tr>
                 <td class="text-center">
                     <p>  <%= product.id %> </p>
@@ -54,7 +53,7 @@
                     <p> <%= product.name %> </p>
                 </td>
                 <td>
-                    <p> <%= product.category.name %> </p>
+                    <p> <%= product.manufacturer.name %> </p>
                 </td>
                 <!-- <td class="ellipsis">
                     <p> <%= product.description %> </p>
