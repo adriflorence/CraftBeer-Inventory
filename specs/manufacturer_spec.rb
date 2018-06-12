@@ -7,34 +7,35 @@ class ManufacturerTest < MiniTest::Test
 
   def setup
     Manufacturer.delete_all()
-    @manufacturer = Manufacturer.new({"name" => "Scottish Dairy", "phone" => "123123123"})
+    @manufacturer = Manufacturer.new({"name" => "3 Floyds Brewing Co.", "country" => "U.S.A."})
     @manufacturer.save()
-    @category = Category.new({"name" => "dairy"})
+    @category = Category.new({"name" => "American Pale Ale", "color" => "#FFE84B"})
     @category.save()
     @product = Product.new({
-      "name" => "milk",
-      "manufacturer_id" => @manufacturer.id,
-      "category_id" => @category.id,
-      "description" => "straight from the cow",
-      "quantity" => 5,
-      "unit" => "box",
-      "ideal_amount" => 20,
-      "cost_price" => 1,
-      "sell_price" => 2
+      "name" => "Zombie Dust",
+      "manufacturer_id" => manufacturer1.id,
+      "category_id" => category1.id,
+      "description" => "Intensely Hoppy!",
+      "alcohol_content" => "6.20%",
+      "quantity" => 10,
+      "volume" => "piece",
+      "ideal_amount" => 10,
+      "cost_price" => 2.50,
+      "sell_price" => 4.50
     })
     @product.save()
   end
 
   def test_manufacturer_name
-    assert_equal("Scottish Dairy", @manufacturer.name)
+    assert_equal("3 Floyds Brewing Co.", @manufacturer.name)
   end
 
   def test_manufacturer_phone
-    assert_equal("123123123", @manufacturer.phone)
+    assert_equal("U.S.A.", @manufacturer.country)
   end
 
   def test_product_names
-    assert_equal("milk", @manufacturer.products.name)
+    assert_equal("Zombie Dust", @manufacturer.products.name)
   end
 
 end

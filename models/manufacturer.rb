@@ -6,17 +6,17 @@ require_relative("product.rb")
 class Manufacturer
 
   attr_reader :id
-  attr_accessor :name, :phone
+  attr_accessor :name, :country
 
   def initialize(options)
     @id = options['id'].to_i
     @name = options['name']
-    @phone = options['phone']
+    @country = options['country']
   end
 
   def save()
-    sql = "INSERT INTO manufacturers (name, phone) VALUES ($1, $2) RETURNING id"
-    values = [@name, @phone]
+    sql = "INSERT INTO manufacturers (name, country) VALUES ($1, $2) RETURNING id"
+    values = [@name, @country]
     manu_data = SqlRunner.run(sql, values)
     @id = manu_data.first()['id'].to_i
   end
@@ -28,9 +28,9 @@ class Manufacturer
   end
 
   def update()
-    sql = "UPDATE manufacturers SET (name, phone) =
+    sql = "UPDATE manufacturers SET (name, country) =
     ($1, $2) WHERE id = $3"
-    values = [@name, @phone, @id]
+    values = [@name, @country, @id]
     SqlRunner.run(sql, values)
   end
 

@@ -1,31 +1,11 @@
-<section id="menu_bar">
-  <nav id="menu">
-    <ul>
-        <li>
-            <a href="#">View Stock</a>
-            <ul class="hidden">
-                <li><a href="/products">Full Stock</a></li>
-                <li><a href="/stock_levels">Stock Levels</a></li>
-                <li><a href="/categories">Categories</a></li>
-            </ul>
-        </li>
-        <li>
-            <a href="#">Add New</a>
-            <ul class="hidden">
-                <li><a href="/products/new_product">Product</a></li>
-                <li><a href="/categories/new_category">Category</a></li>
-                <li><a href="/manufacturers/new_manufacturer">Manufacturer</a></li>
-            </ul>
-        </li>
-        <li><a href="/manufacturers">Manufacturers</a></li>
-        <li><a href="">About</a></li>
-        <li><a href="/" id="exit"></i>Log Out!</a></li>
-    </ul>
-  </nav>
-</section>
 <article class="container">
-  <section id="manufacturers">
-  <h1> All <%= @category.name %> products: </h1>
+  <section id="categories">
+  <% if @category.products == nil %>
+    <h1> No product in <%= @category.name %> yet </h1>
+    </br>
+    <a href="/products/new_product" class="button">Add New Product</a>
+    <% else %>
+  <h1> All <%= @category.name %> : </h1>
 
       <table class="full_stock_table">
         <thead>
@@ -34,7 +14,8 @@
             <th>Name</th>
             <th>Manufacturer</th>
             <th>Quantity</th>
-            <th>Unit</th>
+            <th>A.B.V.</th>
+            <th>Volume</th>
             <th>Ideal Amount</th>
             <th>Buy For</th>
             <th>Sell For</th>
@@ -50,19 +31,19 @@
                     <p>  <%= product.id %> </p>
                 </td>
                 <td>
-                    <p> <%= product.name %> </p>
+                    <p> <a href="/products/<%=product.id%>"><%= product.name %> </a></p>
                 </td>
                 <td>
-                    <p> <%= product.manufacturer.name %> </p>
+                    <p> <a href="/manufacturers/<%=product.manufacturer_id%>"><%= product.manufacturer.name %></a> </p>
                 </td>
-                <!-- <td class="ellipsis">
-                    <p> <%= product.description %> </p>
-                </td> -->
                 <td class="text-center">
                     <p> <%= product.quantity %> </p>
                 </td>
                 <td class="text-center">
-                    <p> <%= product.unit %> </p>
+                    <p> <%= product.alcohol_content %> </p>
+                </td>
+                <td class="text-center">
+                    <p> <%= product.volume %> </p>
                 </td>
                 <td class="text-center">
                     <p> <%= product.ideal_amount %> </p>
@@ -84,6 +65,7 @@
                   </form>
                 </td>
               </tr>
+            <% end %>
             <% end %>
             <% end %>
 

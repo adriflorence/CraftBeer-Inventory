@@ -5,13 +5,14 @@ DROP TABLE IF EXISTS manufacturers;
 
 CREATE TABLE categories (
   id serial8 primary key,
-  name varchar(255)
+  name varchar(255),
+  color varchar(255)
 );
 
 CREATE TABLE manufacturers (
   id serial8 primary key,
   name varchar(255),
-  phone varchar(255) -- format?
+  country varchar(255)
 );
 
 CREATE TABLE products (
@@ -20,9 +21,10 @@ CREATE TABLE products (
   category_id INT8 REFERENCES categories(id) ON DELETE CASCADE,
   name varchar(255),
   description varchar(255),
+  alcohol_content varchar(255),
   quantity INT2,
-  unit varchar(255),
+  volume varchar(255),
   ideal_amount INT2,
-  cost_price INT2,
-  sell_price INT2
+  cost_price FLOAT(3),
+  sell_price FLOAT(3)
 );

@@ -24,7 +24,15 @@ get '/categories' do
 end
 
 post '/categories' do
-  erb(:categories)
+  @category= Category.new(params)
+  @category.save()
+  redirect to '/categories'
+end
+
+get '/categories/new_category' do # CREATE PRODUCT
+  @categories = Category.all()
+  @manufacturers = Manufacturer.all()
+  erb(:new_category)
 end
 
 post '/categories/:id' do # UPDATE CATEGORY
@@ -37,11 +45,6 @@ get '/categories/:id' do # LOOK UP CATEGORY
   @products = Product.all()
   @category = Category.find(params[:id])
   erb(:category)
-end
-
-get '/categories/new_category' do # CREATE PRODUCT
-  @manufacturers = Manufacturer.all()
-  erb(:new_category)
 end
 
 # # # #
@@ -95,6 +98,13 @@ get '/products/:id/edit_product' do # EDIT PRODUCT
   erb(:edit_product)
 end
 
+get '/products/:id' do # INFO ABOUT PRODUCT
+  @product= Product.find(params[:id])
+  @categories = Category.all()
+  @manufacturer = @product.manufacturer()
+  erb(:product)
+end
+
 post '/products/:id' do # UPDATE PRODUCT
   updated_product = Product.new(params)
   updated_product.update()
@@ -106,4 +116,10 @@ post '/products/:id/delete' do # DELETE PRODUCT
   @product = Product.find(id)
   @product.delete()
   redirect to '/products'
+end
+
+# # #
+
+get '/about' do
+  erb(:about)
 end

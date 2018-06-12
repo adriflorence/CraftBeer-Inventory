@@ -1,42 +1,22 @@
-<section id="menu_bar">
-  <nav id="menu">
-    <ul>
-        <li>
-            <a href="#">View Stock</a>
-            <ul class="hidden">
-                <li><a href="/products">Full Stock</a></li>
-                <li><a href="/stock_levels">Stock Levels</a></li>
-                <li><a href="/categories">Categories</a></li>
-            </ul>
-        </li>
-        <li>
-            <a href="#">Add New</a>
-            <ul class="hidden">
-                <li><a href="/products/new_product">Product</a></li>
-                <li><a href="/categories/new_category">Category</a></li>
-                <li><a href="/manufacturers/new_manufacturer">Manufacturer</a></li>
-            </ul>
-        </li>
-        <li><a href="/manufacturers">Manufacturers</a></li>
-        <li><a href="">About</a></li>
-        <li><a href="/" id="exit"></i>Log Out!</a></li>
-    </ul>
-  </nav>
-</section>
 <article class="container">
   <section id="manufacturers">
-  <h1> All products from <%= @manufacturer.name %>: </h1>
-    <p>Phone number: <%= @manufacturer.phone %></p>
+    <% if @manufacturer.products == nil %>
+      <h1> No product for <%= @manufacturer.name %> yet </h1>
+      </br>
+      <a href="/products/new_product" class="button">Add New Product</a>
+      <% else %>
+  <h1> All products from <%= @manufacturer.name %>, <%= @manufacturer.country %>: </h1>
 
       <table class="full_stock_table">
         <thead>
           <tr>
             <th>Id</th>
             <th>Name</th>
-            <th>Category</th>
+            <th>Manufacturer</th>
             <th>Quantity</th>
-            <th>Unit</th>
-            <th>Ideal Amount</th>
+            <th>A.B.V.</th>
+            <th>Volume</th>
+            <th>Ideal</th>
             <th>Buy For</th>
             <th>Sell For</th>
             <th>Edit</th>
@@ -51,19 +31,19 @@
                     <p>  <%= product.id %> </p>
                 </td>
                 <td>
-                    <p> <%= product.name %> </p>
+                    <p> <a href="/products/<%=product.id%>"><%= product.name %> </a></p>
                 </td>
                 <td>
-                    <p> <%= product.category.name %> </p>
+                    <p> <a href="/categories/<%=product.category_id%>"><%= product.category.name %> </a></p>
                 </td>
-                <!-- <td class="ellipsis">
-                    <p> <%= product.description %> </p>
-                </td> -->
                 <td class="text-center">
                     <p> <%= product.quantity %> </p>
                 </td>
                 <td class="text-center">
-                    <p> <%= product.unit %> </p>
+                    <p> <%= product.alcohol_content %> </p>
+                </td>
+                <td class="text-center">
+                    <p> <%= product.volume %> </p>
                 </td>
                 <td class="text-center">
                     <p> <%= product.ideal_amount %> </p>
@@ -75,7 +55,7 @@
                     <p> <%= product.sell_price %> </p>
                 </td>
                 <td class="text-center">
-                  <form method="get" action="/products/<%= product.id %>/edit">
+                  <form method="get" action="/products/<%= product.id %>/edit_product">
                       <p><input type="image" src="/img/edit.png"/></p>
                   </form>
                 </td>
@@ -85,6 +65,7 @@
                   </form>
                 </td>
               </tr>
+            <% end %>
             <% end %>
             <% end %>
 

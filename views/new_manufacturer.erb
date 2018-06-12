@@ -1,39 +1,42 @@
-<section id="menu_bar">
-  <nav id="menu">
-    <ul>
-        <li>
-            <a href="#">View Stock</a>
-            <ul class="hidden">
-                <li><a href="/products">Full Stock</a></li>
-                <li><a href="/stock_levels">Stock Levels</a></li>
-                <li><a href="/categories">Categories</a></li>
-            </ul>
-        </li>
-        <li>
-            <a href="#">Add New</a>
-            <ul class="hidden">
-                <li><a href="/products/new_product">Product</a></li>
-                <li><a href="/categories/new_category">Category</a></li>
-                <li><a href="/manufacturers/new_manufacturer">Manufacturer</a></li>
-            </ul>
-        </li>
-        <li><a href="/manufacturers">Manufacturers</a></li>
-        <li><a href="">About</a></li>
-        <li><a href="/" id="exit"></i>Log Out!</a></li>
-    </ul>
-  </nav>
-</section>
 <article class="container">
-  <h1> Add a new manufacturer! </h1>
+
     <div id="new_item">
+      <h1> Add a new manufacturer! </h1>
         <form method="post" action="/manufacturers">
 
           <label for="name">Name: </label>
           <input id="name" type="text" name="name"/>
           <br>
 
-          <label for="phone">Phone: </label>
-          <input id="phone" type="text" name="phone"/>
+          <label for="country_select">Select country:</label>
+          <select id="country_select" type="text" name="country">
+              <option value="Australia">Australia</option>
+              <option value="Belgium">Belgium</option>
+              <option value="Brazil">Brazil</option>
+	            <option value="Canada">Canada</option>
+              <option value="Chile">Chile</option>
+	            <option value="China">China</option>
+              <option value="Czech Republic">Czech Republic</option>
+	            <option value="Denmark">Denmark</option>
+              <option value="France">France</option>
+              <option value="Germany">Germany</option>
+              <option value="Hungary">Hungary</option>
+	            <option value="Iceland">Iceland</option>
+              <option value="Ireland">Ireland</option>
+              <option value="Italy">Italy</option>
+              <option value="Japan">Japan</option>
+              <option value="Mauritius">Mauritius</option>
+              <option value="Mexico">Mexico</option>
+              <option value="Netherlands">The Netherlands</option>
+              <option value="New Zealand">New Zealand</option>
+              <option value="Poland">Poland</option>
+	            <option value="Portugal">Portugal</option>
+              <option value="Scotland">Scotland</option>
+              <option value="Spain">Spain</option>
+              <option value="Thailand">Thailand</option>
+              <option value="UK">U.K.</option>
+              <option value="USA">U.S.A.</option>
+          </select>
           <br>
 
           <input type="submit" value="Add Manufacturer to Database"/>
