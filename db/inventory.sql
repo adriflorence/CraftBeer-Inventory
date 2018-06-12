@@ -25,6 +25,7 @@ CREATE TABLE products (
   quantity INT2,
   volume varchar(255),
   ideal_amount INT2,
-  cost_price FLOAT(3),
-  sell_price FLOAT(3)
+  cost_price decimal,
+  sell_price decimal,
+  image_path varchar(255)
 );

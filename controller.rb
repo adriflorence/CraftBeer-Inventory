@@ -84,6 +84,9 @@ end
 
 get '/products' do
   @page = params[:page].to_i
+  if @page < 1
+    redirect to 'products?page=1'
+  end
   @pages_needed = Product.pages_needed()
   @products = Product.filter(@page)
   erb(:products)
@@ -112,7 +115,6 @@ get '/products/:id' do # INFO ABOUT PRODUCT
   @product= Product.find(params[:id])
   @categories = Category.all()
   @manufacturer = @product.manufacturer()
-  binding.pry
   erb(:product)
 end
 

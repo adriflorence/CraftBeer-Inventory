@@ -1,9 +1,20 @@
 <article class="container">
-  <h1> INFO ABOUT PRODUCT: </h1>
-  <div id="new_item">
+  <h1> INFO ABOUT <%= @product.name.upcase %> </h1>
+  <div class="product_view">
 
-    <h1> <%= @product.name %> </h1>
+    <section class="product_image">
+        <img src="<%= @product.image_path%>"/>
+    </section>
+    <section class="product_content">
+        <h1> <%= @product.name %> is delivered by <a href="/manufacturers/<%=@product.manufacturer_id%>"><%= @product.manufacturer.name %> </a></h1>
+        <h1> All the way from <%= @product.manufacturer.country %> </a></h1>
+        <h1> <a href="/manufacturers/<%=@product.category_id%>"><%= @product.category.name %> </a></h1>
+        <h1> ABV: <%= @product.alcohol_content %> % </h1>
+        <h1> Apparently it's: <%= @product.description %> </h1>
+        </br>
+        <h1> Wholesale price: £<%= '%.2f' % @product.cost_price %> </h1>
+    </section>
+    <div style="clear:both"></div>
 
-    <h1> Delivered by: <a href="/manufacturers/<%= @manufacturer.id%>"> <%= @manufacturer.name %> </a> </h1>
   </div>
-</div>
+</article>

@@ -7,10 +7,10 @@ class ManufacturerTest < MiniTest::Test
 
   def setup
     Manufacturer.delete_all()
-    @manufacturer = Manufacturer.new({"name" => "3 Floyds Brewing Co.", "country" => "U.S.A."})
-    @manufacturer.save()
-    @category = Category.new({"name" => "American Pale Ale", "color" => "#FFE84B"})
-    @category.save()
+    manufacturer = Manufacturer.new({"name" => "3 Floyds Brewing Co.", "country" => "U.S.A."})
+    manufacturer.save()
+    category = Category.new({"name" => "American Pale Ale", "color" => "#FFE84B"})
+    category.save()
     @product = Product.new({
       "name" => "Zombie Dust",
       "manufacturer_id" => manufacturer1.id,

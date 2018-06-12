@@ -7,17 +7,18 @@ class CategoryTest < MiniTest::Test
 
   def setup
     Manufacturer.delete_all()
-    @manufacturer = Manufacturer.new({"name" => "3 Floyds Brewing Co.", "country" => "U.S.A."})
-    @manufacturer.save()
-    @category = Category.new({"name" => "American Pale Ale", "color" => "#FFE84B"})
-    @category.save()
+    manufacturer = Manufacturer.new({"name" => "3 Floyds Brewing Co.", "country" => "U.S.A."})
+    manufacturer.save()
+    category = Category.new({"name" => "American Pale Ale", "color" => "#FFE84B"})
+    category.save()
     @product = Product.new({
       "name" => "Zombie Dust",
       "manufacturer_id" => manufacturer1.id,
       "category_id" => category1.id,
       "description" => "Intensely Hoppy!",
+      "alcohol_content" => "6.20%",
       "quantity" => 10,
-      "volume" => "piece",
+      "volume" => "330ml",
       "ideal_amount" => 10,
       "cost_price" => 2.50,
       "sell_price" => 4.50

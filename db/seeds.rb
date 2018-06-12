@@ -78,20 +78,22 @@ product1 = Product.new({
   "volume" => "330ml",
   "ideal_amount" => 10,
   "cost_price" => 2.50,
-  "sell_price" => 4.50
+  "sell_price" => 4.50,
+  "image_path" => "/img/bottles/zombie.jpg"
 })
 
 product2 = Product.new({
   "name" => "Lizard King",
   "manufacturer_id" => manufacturer2.id,
   "category_id" => category1.id,
-  "description" => "-",
+  "description" => "to do with the battle between ninjas and unicorns",
   "alcohol_content" => "6.00%",
   "quantity" => 3,
   "volume" => "330ml",
   "ideal_amount" => 10,
   "cost_price" => 2.80,
-  "sell_price" => 4.00
+  "sell_price" => 4.00,
+  "image_path" => "/img/bottles/lizard_king.jpg"
 })
 
 product3 = Product.new({
@@ -104,137 +106,148 @@ product3 = Product.new({
   "volume" => "500ml",
   "ideal_amount" => 10,
   "cost_price" => 2.50,
-  "sell_price" => 4.50
+  "sell_price" => 4.50,
+  "image_path" => "/img/bottles/bombshell_blonde.png"
 })
 
 product4 = Product.new({
   "name" => "Pilsner Urquell",
   "manufacturer_id" => manufacturer11.id,
   "category_id" => category10.id,
-  "description" => "blah",
+  "description" => "the world’s first pilsner type blond lager",
   "alcohol_content" => "4.40%",
   "quantity" => 10,
   "volume" => "500ml",
   "ideal_amount" => 10,
   "cost_price" => 1.90,
-  "sell_price" => 3.50
+  "sell_price" => 3.50,
+  "image_path" => "/img/bottles/pilsner_urquell.jpg"
 })
 
 product5 = Product.new({
   "name" => "Krusovice Imperial",
   "manufacturer_id" => manufacturer13.id,
   "category_id" => category10.id,
-  "description" => " ... ",
+  "description" => "a wonderful light refreshing beer",
   "alcohol_content" => "5.00%",
   "quantity" => 10,
   "volume" => "500ml",
   "ideal_amount" => 10,
   "cost_price" => 2.50,
-  "sell_price" => 4.50
+  "sell_price" => 4.50,
+  "image_path" => "/img/bottles/krusovice.png"
 })
 
 product6 = Product.new({
   "name" => "Newcastle Summer Ale",
   "manufacturer_id" => manufacturer5.id,
   "category_id" => category2.id,
-  "description" => " . . . ",
+  "description" => "not from that Newcastle..",
   "alcohol_content" => "4.40%",
   "quantity" => 10,
   "volume" => "500ml",
   "ideal_amount" => 10,
   "cost_price" => 2.50,
-  "sell_price" => 4.50
+  "sell_price" => 4.50,
+  "image_path" => "/img/bottles/newcastle_summerale.jpg"
 })
 
 product7 = Product.new({
   "name" => "Delirium Red",
   "manufacturer_id" => manufacturer13.id,
   "category_id" => category4.id,
-  "description" => "!",
+  "description" => "Adri's favourite beer!",
   "alcohol_content" => "8.5%",
   "quantity" => 10,
   "volume" => "250ml",
   "ideal_amount" => 10,
   "cost_price" => 2.50,
-  "sell_price" => 4.50
+  "sell_price" => 4.50,
+  "image_path" => "/img/bottles/delirium_red.jpg"
 })
 
 product8 = Product.new({
   "name" => "Joker",
   "manufacturer_id" => manufacturer10.id,
   "category_id" => category7.id,
-  "description" => "Joker IPA is Bitter/Sweet, full of flavour and is sure to put a smile on your face.",
+  "description" => "full of flavour and is sure to put a smile on your face.",
   "alcohol_content" => "5.0%",
   "quantity" => 10,
   "volume" => "500ml",
   "ideal_amount" => 10,
   "cost_price" => 2.50,
-  "sell_price" => 4.50
+  "sell_price" => 4.50,
+  "image_path" => "/img/bottles/joker.png"
 })
 
 product9 = Product.new({
   "name" => "Orinoco Breakfast Stout",
   "manufacturer_id" => manufacturer12.id,
   "category_id" => category12.id,
-  "description" => "....",
+  "description" => "like Lyle's women, dark & heavy!",
   "alcohol_content" => "6.00%",
   "quantity" => 10,
   "volume" => "200ml",
   "ideal_amount" => 10,
   "cost_price" => 1.10,
-  "sell_price" => 1.80
+  "sell_price" => 1.80,
+  "image_path" => "/img/bottles/orinoco_stout.png"
 })
 
 product10 = Product.new({
   "name" => "Blood Of The Unicorn",
   "manufacturer_id" => manufacturer12.id,
   "category_id" => category6.id,
-  "description" => "Hoppy Red Ale",
+  "description" => "Pipeworks Ninja vs Unicorn's hot redheaded sister.",
   "alcohol_content" => "4.80%",
   "quantity" => 10,
   "volume" => "330ml",
   "ideal_amount" => 10,
   "cost_price" => 1.00,
-  "sell_price" => 1.80
+  "sell_price" => 1.80,
+  "image_path" => "/img/bottles/blood_of_the_unicorn.jpeg"
 })
 
 product11 = Product.new({
   "name" => "Birds And Bees",
   "manufacturer_id" => manufacturer10.id,
   "category_id" => category3.id,
-  "description" => "Summer Ale",
+  "description" => "the friendliest welcome in central Scotland.",
   "alcohol_content" => "4.80%",
   "quantity" => 20,
   "volume" => "500ml",
   "ideal_amount" => 10,
   "cost_price" => 1.00,
-  "sell_price" => 1.65
+  "sell_price" => 1.65,
+  "image_path" => "/img/bottles/birds_and_bees.png"
 })
 
 product12 = Product.new({
   "name" => "Seven Giraffes",
   "manufacturer_id" => manufacturer10.id,
   "category_id" => category7.id,
-  "description" => "Extraordinary IPA",
+  "description" => "feisty pale ale with a flavour that's 42 metres tall.",
   "alcohol_content" => "4.80%",
   "quantity" => 20,
   "volume" => "500ml",
   "ideal_amount" => 10,
   "cost_price" => 1.00,
-  "sell_price" => 1.65
+  "sell_price" => 1.65,
+  "image_path" => "/img/bottles/seven_giraffes.jpg"
 })
 
 product13 = Product.new({
   "name" => "Ceasar Augustus",
   "manufacturer_id" => manufacturer10.id,
   "category_id" => category8.id,
-  "description" => "Lager IPA",
+  "description" => "a Lager/IPA hybrid for those who cannot decide on their favourite Roman Emperor. Caesar? Augustus? Both!",
   "alcohol_content" => "4.10%",
   "quantity" => 20,
   "volume" => "500ml",
   "ideal_amount" => 10,
   "cost_price" => 1.00,
-  "sell_price" => 1.65
+  "sell_price" => 1.65,
+  "image_path" => "/img/bottles/ceasar_augustus.jpg"
 })
 
 product14 = Product.new({
@@ -247,7 +260,8 @@ product14 = Product.new({
   "volume" => "330ml",
   "ideal_amount" => 10,
   "cost_price" => 1.00,
-  "sell_price" => 1.65
+  "sell_price" => 1.65,
+  "image_path" => "/img/bottles/elvis_juice.jpg"
 })
 
 product15 = Product.new({
@@ -260,7 +274,8 @@ product15 = Product.new({
   "volume" => "330ml",
   "ideal_amount" => 10,
   "cost_price" => 1.00,
-  "sell_price" => 2.25
+  "sell_price" => 2.25,
+  "image_path" => "/img/bottles/samurai_ale.png"
 })
 
 product16 = Product.new({
@@ -273,33 +288,36 @@ product16 = Product.new({
   "volume" => "500ml",
   "ideal_amount" => 10,
   "cost_price" => 1.00,
-  "sell_price" => 2.25
+  "sell_price" => 2.25,
+  "image_path" => "/img/bottles/belhaven_best.jpg"
 })
 
 product17 = Product.new({
   "name" => "Heineken",
   "manufacturer_id" => manufacturer5.id,
   "category_id" => category8.id,
-  "description" => " . . . ",
+  "description" => "well known for its signature green bottle and red star.",
   "alcohol_content" => "5.00%",
   "quantity" => 40,
   "volume" => "330ml",
   "ideal_amount" => 10,
   "cost_price" => 1.00,
-  "sell_price" => 2.25
+  "sell_price" => 2.25,
+  "image_path" => "/img/bottles/heineken.jpg"
 })
 
 product18 = Product.new({
   "name" => "Disco Forklift Truck",
   "manufacturer_id" => manufacturer12.id,
   "category_id" => category1.id,
-  "description" => " American Pale Ale ",
+  "description" => "a MANGO FANDANGO! JUICY PALE ALE LOADED TO THE GUNNELS WITH US HOPS AND MANGO. ",
   "alcohol_content" => "5.10%",
   "quantity" => 40,
   "volume" => "250ml",
   "ideal_amount" => 10,
   "cost_price" => 1.00,
-  "sell_price" => 2.25
+  "sell_price" => 2.25,
+  "image_path" => "/img/bottles/disco_forklift_truck.jpg"
 })
 
 product19 = Product.new({
@@ -312,20 +330,22 @@ product19 = Product.new({
   "volume" => "500ml",
   "ideal_amount" => 10,
   "cost_price" => 1.60,
-  "sell_price" => 2.25
+  "sell_price" => 2.25,
+  "image_path" => "/img/bottles/bearface.jpg"
 })
 
 product20 = Product.new({
   "name" => "Ax Man",
   "manufacturer_id" => manufacturer12.id,
   "category_id" => category5.id,
-  "description" => "Rye Ale",
+  "description" => "Hipster Rye Ale",
   "alcohol_content" => "5.00%",
   "quantity" => 10,
   "volume" => "piece",
   "ideal_amount" => 10,
   "cost_price" => 1.60,
-  "sell_price" => 1.95
+  "sell_price" => 1.95,
+  "image_path" => "/img/bottles/ax_man.png"
 })
 
 product21 = Product.new({
@@ -338,7 +358,8 @@ product21 = Product.new({
   "volume" => "500ml",
   "ideal_amount" => 10,
   "cost_price" => 1.00,
-  "sell_price" => 1.95
+  "sell_price" => 1.95,
+  "image_path" => "/img/bottles/outaspace.png"
 })
 
 product22 = Product.new({
@@ -351,33 +372,36 @@ product22 = Product.new({
   "volume" => "500ml",
   "ideal_amount" => 10,
   "cost_price" => 1.00,
-  "sell_price" => 1.95
+  "sell_price" => 1.95,
+  "image_path" => "/img/bottles/krusovice.png"
 })
 
 product23 = Product.new({
   "name" => "Innis & Gunn",
   "manufacturer_id" => manufacturer15.id,
   "category_id" => category8.id,
-  "description" => "Bourbon Barrel Scotch Beer",
+  "description" => "Steve's favourite!",
   "alcohol_content" => "6.60%",
   "quantity" => 10,
   "volume" => "330ml",
   "ideal_amount" => 24,
   "cost_price" => 1.20,
-  "sell_price" => 1.95
+  "sell_price" => 1.95,
+  "image_path" => "/img/bottles/innis_gunn.jpg"
 })
 
 product24 = Product.new({
   "name" => "Punk IPA",
   "manufacturer_id" => manufacturer9.id,
   "category_id" => category7.id,
-  "description" => "tropical fruit flavours ",
+  "description" => "EVERYONE'S FAVOURITE!!",
   "alcohol_content" => "5.60%",
   "quantity" => 10,
   "volume" => "330ml",
   "ideal_amount" => 100,
   "cost_price" => 1.80,
-  "sell_price" => 4.40
+  "sell_price" => 4.40,
+  "image_path" => "/img/bottles/punk_ipa.jpg"
 })
 
 product25 = Product.new({
@@ -390,7 +414,8 @@ product25 = Product.new({
   "volume" => "330ml",
   "ideal_amount" => 12,
   "cost_price" => 2.19,
-  "sell_price" => 4.80
+  "sell_price" => 4.80,
+  "image_path" => "/img/bottles/jack_hammer.png"
 })
 
 product26 = Product.new({
@@ -403,7 +428,8 @@ product26 = Product.new({
   "volume" => "330ml",
   "ideal_amount" => 100,
   "cost_price" => 1.79,
-  "sell_price" => 4.80
+  "sell_price" => 4.80,
+  "image_path" => "/img/bottles/jet_black_hammer.jpg"
 })
 
 product27 = Product.new({
@@ -416,11 +442,9 @@ product27 = Product.new({
   "volume" => "350ml",
   "ideal_amount" => 6,
   "cost_price" => 1.80,
-  "sell_price" => 3.50
+  "sell_price" => 3.50,
+  "image_path" => "/img/bottles/sierra_nevada.png"
 })
-
-
-
 
 
 product1.save()
@@ -449,3 +473,4 @@ product23.save()
 product24.save()
 product25.save()
 product26.save()
+product27.save()
