@@ -18,7 +18,7 @@ class ProductTest < MiniTest::Test
       "description" => "Intensely Hoppy!",
       "alcohol_content" => "6.20%",
       "quantity" => 10,
-      "volume" => "piece",
+      "volume" => "330ml",
       "ideal_amount" => 10,
       "cost_price" => 2.50,
       "sell_price" => 4.50

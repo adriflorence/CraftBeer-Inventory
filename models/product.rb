@@ -65,6 +65,19 @@ class Product
 
   # # # #
 
+  def self.pages_needed()
+    products = Product.all()
+    pages_needed = ((products.length)/10.to_f).ceil
+    return pages_needed
+  end
+
+  def self.filter(page)
+    products = Product.all()
+    start = (10*page)-10
+    finish = (10*page)-1
+    return products[start..finish]
+  end
+
   def category()
     sql = "SELECT name FROM categories WHERE id = $1"
     values = [@category_id]

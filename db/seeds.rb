@@ -20,7 +20,10 @@ manufacturer10 = Manufacturer.new({"name" => "Williams Brothers Brewing Co.", "c
 manufacturer11 = Manufacturer.new({"name" => "Pilzensky Prazdroy", "country" => "Czech Republic"})
 manufacturer12 = Manufacturer.new({"name" => "Drygate", "country" => "Scotland"})
 manufacturer13 = Manufacturer.new({"name" => "Kralovsky Pivovar", "country" => "Czech Republic"})
-manufacturer13 = Manufacturer.new({"name" => "Brouwerij Huyghe ", "country" => "Belgium"})
+manufacturer14 = Manufacturer.new({"name" => "Brouwerij Huyghe", "country" => "Belgium"})
+manufacturer15 = Manufacturer.new({"name" => "Innis & Gunn Brewery", "country" => "Scotland"})
+manufacturer16 = Manufacturer.new({"name" => "Sierra Nevada Brewing Co.", "country" => "U.S.A."})
+
 manufacturer1.save()
 manufacturer2.save()
 manufacturer3.save()
@@ -34,6 +37,9 @@ manufacturer10.save()
 manufacturer11.save()
 manufacturer12.save()
 manufacturer13.save()
+manufacturer14.save()
+manufacturer15.save()
+manufacturer16.save()
 
 
 category1 = Category.new({"name" => "APA", "color" => "FFE84B"})
@@ -348,6 +354,73 @@ product22 = Product.new({
   "sell_price" => 1.95
 })
 
+product23 = Product.new({
+  "name" => "Innis & Gunn",
+  "manufacturer_id" => manufacturer15.id,
+  "category_id" => category8.id,
+  "description" => "Bourbon Barrel Scotch Beer",
+  "alcohol_content" => "6.60%",
+  "quantity" => 10,
+  "volume" => "330ml",
+  "ideal_amount" => 24,
+  "cost_price" => 1.20,
+  "sell_price" => 1.95
+})
+
+product24 = Product.new({
+  "name" => "Punk IPA",
+  "manufacturer_id" => manufacturer9.id,
+  "category_id" => category7.id,
+  "description" => "tropical fruit flavours ",
+  "alcohol_content" => "5.60%",
+  "quantity" => 10,
+  "volume" => "330ml",
+  "ideal_amount" => 100,
+  "cost_price" => 1.80,
+  "sell_price" => 4.40
+})
+
+product25 = Product.new({
+  "name" => "Jack Hammer",
+  "manufacturer_id" => manufacturer9.id,
+  "category_id" => category7.id,
+  "description" => "full of citrus fruit and sweet aromas",
+  "alcohol_content" => "7.20%",
+  "quantity" => 10,
+  "volume" => "330ml",
+  "ideal_amount" => 12,
+  "cost_price" => 2.19,
+  "sell_price" => 4.80
+})
+
+product26 = Product.new({
+  "name" => "Jet Black Heart",
+  "manufacturer_id" => manufacturer9.id,
+  "category_id" => category11.id,
+  "description" => " roasted bitterness, coffee and chocolate.",
+  "alcohol_content" => "4.70%",
+  "quantity" => 10,
+  "volume" => "330ml",
+  "ideal_amount" => 100,
+  "cost_price" => 1.79,
+  "sell_price" => 4.80
+})
+
+product27 = Product.new({
+  "name" => "Sierra Nevada",
+  "manufacturer_id" => manufacturer16.id,
+  "category_id" => category1.id,
+  "description" => "Cambell's favourite!",
+  "alcohol_content" => "4.70%",
+  "quantity" => 10,
+  "volume" => "350ml",
+  "ideal_amount" => 6,
+  "cost_price" => 1.80,
+  "sell_price" => 3.50
+})
+
+
+
 
 
 product1.save()
@@ -371,3 +444,8 @@ product18.save()
 product19.save()
 product20.save()
 product21.save()
+product22.save()
+product23.save()
+product24.save()
+product25.save()
+product26.save()

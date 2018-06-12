@@ -8,10 +8,6 @@ get '/' do
   erb(:home)
 end
 
-get '/products' do
-  @products = Product.all()
-  erb(:products)
-end
 
 get '/stock_levels' do
   @products = Product.all()
@@ -77,7 +73,21 @@ get '/manufacturers/:id' do # LOOK UP MANUFACTURER
   erb(:manufacturer)
 end
 
+post '/manufacturers/:id/delete' do # DELETE MANUFACTURER
+  id = params["id"].to_i
+  @manufacturer = Manufacturer.find(id)
+  @manufacturer.delete()
+  redirect to '/manufacturers'
+end
+
 # # # #
+
+get '/products' do
+  @page = params[:page].to_i
+  @pages_needed = Product.pages_needed()
+  @products = Product.filter(@page)
+  erb(:products)
+end
 
 get '/products/new_product' do # CREATE PRODUCT
   @manufacturers = Manufacturer.all()
@@ -102,6 +112,7 @@ get '/products/:id' do # INFO ABOUT PRODUCT
   @product= Product.find(params[:id])
   @categories = Category.all()
   @manufacturer = @product.manufacturer()
+  binding.pry
   erb(:product)
 end
 
@@ -117,6 +128,7 @@ post '/products/:id/delete' do # DELETE PRODUCT
   @product.delete()
   redirect to '/products'
 end
+
 
 # # #
 

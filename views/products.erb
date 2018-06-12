@@ -69,5 +69,22 @@
 
         </tbody>
       </table>
+
   </div>
+  <section class="pagination">
+
+      <div>
+        <a href="/products?page=1" style="<%= 'visibility:hidden' if @page < 2%>"> first </a>
+      </div>
+      <div>
+          <a href="/products?page=<%= @page-1 %>" style="<%= 'visibility:hidden' if @page <= 1%>"> <%= @page-1 %> </a>
+
+          <a href="/products?page=<%= @page %>" style="font-size: 30px"> <%= @page %> </a>
+          <a href="/products?page=<%= @page+1 %>" style="<%= 'visibility:hidden' if @page >= @pages_needed%>"> <%= @page+1 %> </a>
+      </div>
+
+      <div>
+        <a href="/products?page=<%= @number_of_pages %>" style="<%= 'visibility: hidden' if @page >= @pages_needed %>"> last </a>
+      </div>
+  </section>
 </article>

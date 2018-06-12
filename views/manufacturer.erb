@@ -4,6 +4,11 @@
       <h1> No product for <%= @manufacturer.name %> yet </h1>
       </br>
       <a href="/products/new_product" class="button">Add New Product</a>
+
+      <form method="post" action="/manufacturers/<%= @manufacturer.id %>/delete">
+          <p><input type='submit' value="Remove Manufacturer"/></p>
+      </form>
+
       <% else %>
   <h1> All products from <%= @manufacturer.name %>, <%= @manufacturer.country %>: </h1>
 

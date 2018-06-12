@@ -306,6 +306,10 @@ input[type=submit]:hover, a.button:hover {
 
 /* FULL_STOCK.erb LIST VIEW */
 
+.table_container {
+    height: 720px;
+}
+
 .full_stock_table {
   margin: 40px auto;
 }
@@ -348,12 +352,27 @@ table.full_stock_table input[type=image] {
   height: 30px !important;
 }
 
-.ellipsis {
-    max-width: 160px;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    white-space: nowrap;
+
+/*  PAGINATION  */
+
+.pagination {
+  padding: 20px 0px;
+  align-items: baseline;
+  text-align: center;
+  font-size: 18px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
+
+.pagination a {
+  color: black;
+}
+
+.pagination > div {
+  margin: 0px 20px;
+}
+
 
 /* STOCK LEVELS */
 
@@ -370,15 +389,9 @@ table.full_stock_table input[type=image] {
 
 #levels .chart {
     display: table;
-    background-color: rgba(0,0,0,0);
-    vertical-align: bottom;
     width: 100%;
     max-width: 700px;
-    height: 200px;
     margin: 0 auto;
-    position: absolute;
-    bottom: 0;
-    left: 0;
     padding: 0px;
 }
 
