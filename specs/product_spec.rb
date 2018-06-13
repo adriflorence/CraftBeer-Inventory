@@ -9,7 +9,7 @@ class ProductTest < MiniTest::Test
     Manufacturer.delete_all()
     manufacturer = Manufacturer.new({"name" => "3 Floyds Brewing Co.", "country" => "U.S.A."})
     manufacturer.save()
-    category = Category.new({"name" => "American Pale Ale", "color" => "FFE84B"})
+    category = Category.new({"name" => "APA", "image" => "apa.png"})
     category.save()
     @product = Product.new({
       "name" => "Zombie Dust",
@@ -28,7 +28,7 @@ class ProductTest < MiniTest::Test
   end
 
   def test_category()
-    assert_equal("American Pale Ale", @product.category.name)
+    assert_equal("APA", @product.category.name)
   end
 
   def test_manufacturer
@@ -36,7 +36,11 @@ class ProductTest < MiniTest::Test
   end
 
   def test_color()
-    assert_equal("FFE84B", @product.category.color)
+    assert_equal("apa.png", @product.category.image)
+  end
+
+  def test_profit()
+    assert_equal(20, @product.profit)
   end
 
 

@@ -1,6 +1,6 @@
 <article class="container">
   <h1> INFO ABOUT <%= @product.name.upcase %> </h1>
-  <div class="product_view">
+  <div class="product_view" style="position:relative">
 
     <section class="product_image">
         <img src="<%= @product.image_path%>"/>
@@ -12,9 +12,10 @@
         <h1> ABV: <%= @product.alcohol_content %> % </h1>
         <h1> Apparently it's: <%= @product.description %> </h1>
         </br>
-        <h1> Wholesale price: £<%= '%.2f' % @product.cost_price %> </h1>
+        <h1> Wholesale price: £<%= '%.2f' % @product.cost_price %> / Retail price: <%= '%.2f' % @product.sell_price%></h1>
+        <h1> In stock: <%= @product.quantity %> / Potential profit: <%= '%.2f' % @product.profit%></h1>
     </section>
     <div style="clear:both"></div>
-
+    <span style="position: absolute; right: 40px; bottom: 50px"><a href="/products" class="button"> back to products </a></span>
   </div>
 </article>

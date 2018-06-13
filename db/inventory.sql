@@ -6,7 +6,7 @@ DROP TABLE IF EXISTS manufacturers;
 CREATE TABLE categories (
   id serial8 primary key,
   name varchar(255),
-  color varchar(255)
+  image varchar(255)
 );
 
 CREATE TABLE manufacturers (

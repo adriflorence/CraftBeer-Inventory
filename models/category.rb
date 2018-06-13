@@ -5,17 +5,17 @@ require_relative("product.rb")
 class Category
 
   attr_reader :id
-  attr_accessor :name, :color
+  attr_accessor :name, :image
 
   def initialize(options)
     @id = options['id'].to_i
     @name = options['name']
-    @color = options['color']
+    @image = options['image']
   end
 
   def save()
-    sql = "INSERT INTO categories (name, color) VALUES ($1, $2) RETURNING id"
-    values = [@name, @color]
+    sql = "INSERT INTO categories (name, image) VALUES ($1, $2) RETURNING id"
+    values = [@name, @image]
     cat_data = SqlRunner.run(sql, values)
     @id = cat_data.first()['id'].to_i
   end

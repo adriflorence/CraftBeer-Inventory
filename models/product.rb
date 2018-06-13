@@ -46,9 +46,9 @@ class Product
   end
 
   def update()
-    sql = "UPDATE products SET (name, manufacturer_id, category_id, description, quantity, alcohol_content, volume, ideal_amount, cost_price, sell_price, image_path) =
-    ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) WHERE id = $10"
-    values = [@name, @manufacturer_id, @category_id, @description, @quantity, @volume, @ideal_amount, @cost_price, @sell_price, @image_path, @id]
+    sql = "UPDATE products SET (name, manufacturer_id, category_id, quantity, alcohol_content, volume, description, ideal_amount, cost_price, sell_price, image_path) =
+    ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) WHERE id = $12"
+    values = [@name, @manufacturer_id, @category_id, @quantity, @alcohol_content, @volume, @description, @ideal_amount, @cost_price, @sell_price, @image_path, @id]
     SqlRunner.run(sql, values)
   end
 
@@ -80,7 +80,7 @@ class Product
   end
 
   def category()
-    sql = "SELECT name FROM categories WHERE id = $1"
+    sql = "SELECT * FROM categories WHERE id = $1"
     values = [@category_id]
     result = SqlRunner.run(sql, values)
     return Category.new(result[0])
@@ -91,6 +91,10 @@ class Product
     values = [@manufacturer_id]
     result = SqlRunner.run(sql, values)
     return Manufacturer.new(result[0])
+  end
+
+  def profit()
+    return (@sell_price - @cost_price)*@quantity
   end
 
 end

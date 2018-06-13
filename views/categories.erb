@@ -3,7 +3,12 @@
       <% for category in @categories%>
         <div class="image">
           <a href="/categories/<%= category.id%>">
-            <img src="/img/<%= category.color%>.png"/>
+            <% if category.image != nil %>
+            <img src="/img/categories/<%= category.image%>"/>
+
+            <% else %>
+            <img src="/img/no-image.png"/>
+            <% end %>
               <p> <%= category.name %> </p>
             </a>
         </div>

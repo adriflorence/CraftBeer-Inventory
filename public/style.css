@@ -62,15 +62,14 @@ ul, ol {
 .button_div input{
     display:block;
     margin: 0px auto;
-    padding: 30px;
     position: absolute;
-    left: 900px;
+    left: 700px;
     top: 400px;
 }
 
 .button_div input[type=submit]{
-    font-size: 54px;
-    color: white;
+    font-size: 100px;
+    padding: 40px 100px;
     background: rgba(0,0,0,0);
     color: #F4EADA;
     box-shadow: inset 0 0 0 3px #F4EADA;
@@ -79,7 +78,6 @@ ul, ol {
 .button_div input[type=submit]:hover {
     background-color: #F6EEE1;
     color: #365663;
-    padding: 20px;
     margin: 8px auto;
     border: none;
     border-radius: 4px;
@@ -90,12 +88,12 @@ ul, ol {
 input[type=submit], a.button {
     background-color: #E8D2AE;
     color: #365663;
-    padding: 20px;
     margin: 8px auto;
     border: none;
     border-radius: 4px;
     cursor: pointer;
     font-size: 24px;
+    padding: 20px;
 }
 
 input[type=submit]:hover, a.button:hover {
@@ -107,7 +105,8 @@ input[type=submit]:hover, a.button:hover {
 }
 
 #login_image {
-    margin: 0px auto;
+    height: 100vh;
+    background-image: url('img/open.jpg');
 }
 
 /* MENU */
@@ -254,9 +253,11 @@ input[type=submit]:hover, a.button:hover {
 
 .flex-container {
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
     margin: 15px auto;
     padding-bottom: 100px;
+    padding-top: 10px;
 }
 
 .flex-container > div a {

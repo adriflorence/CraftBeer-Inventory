@@ -25,7 +25,7 @@ post '/categories' do
   redirect to '/categories'
 end
 
-get '/categories/new_category' do # CREATE PRODUCT
+get '/categories/new_category' do # CREATE CATEGORY
   @categories = Category.all()
   @manufacturers = Manufacturer.all()
   erb(:new_category)
