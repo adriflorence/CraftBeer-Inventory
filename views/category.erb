@@ -4,6 +4,9 @@
     <h1> No product in <%= @category.name %> yet </h1>
     </br>
     <a href="/products/new_product" class="button">Add New Product</a>
+    <form method="post" action="/categories/<%= @category.id %>/delete">
+        <p><input type='submit' value="Remove Category"/></p>
+    </form>
     <% else %>
   <h1> List of <%= @category.name %>s : </h1>
 

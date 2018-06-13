@@ -22,7 +22,7 @@ class ProductTest < MiniTest::Test
       "ideal_amount" => 10,
       "cost_price" => 2.50,
       "sell_price" => 4.50,
-      "image_path" => "img/bottles/zombie.jpg"
+      "image" => "zombie.jpg"
     })
     @product.save()
   end

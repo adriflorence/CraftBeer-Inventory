@@ -9,7 +9,7 @@ class ManufacturerTest < MiniTest::Test
     Manufacturer.delete_all()
     @manufacturer = Manufacturer.new({"name" => "3 Floyds Brewing Co.", "country" => "U.S.A."})
     @manufacturer.save()
-    @category = Category.new({"name" => "American Pale Ale", "color" => "#FFE84B"})
+    @category = Category.new({"name" => "APA", "image" => "apa.png"})
     @category.save()
     @product = Product.new({
       "name" => "Zombie Dust",
@@ -22,7 +22,7 @@ class ManufacturerTest < MiniTest::Test
       "ideal_amount" => 10,
       "cost_price" => 2.50,
       "sell_price" => 4.50,
-      "image_path" => "/img/bottles/zombie.jpg"
+      "image" => "zombie.jpg"
     })
     @product.save()
   end

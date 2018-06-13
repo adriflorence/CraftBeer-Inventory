@@ -79,7 +79,7 @@ product1 = Product.new({
   "ideal_amount" => 10,
   "cost_price" => 2.50,
   "sell_price" => 4.50,
-  "image_path" => "/img/bottles/zombie.jpg"
+  "image" => "zombie.jpg"
 })
 
 product2 = Product.new({
@@ -93,7 +93,7 @@ product2 = Product.new({
   "ideal_amount" => 10,
   "cost_price" => 2.80,
   "sell_price" => 4.00,
-  "image_path" => "/img/bottles/lizard_king.jpg"
+  "image" => "lizard_king.jpg"
 })
 
 product3 = Product.new({
@@ -107,7 +107,7 @@ product3 = Product.new({
   "ideal_amount" => 10,
   "cost_price" => 2.50,
   "sell_price" => 4.50,
-  "image_path" => "/img/bottles/bombshell_blonde.png"
+  "image" => "bombshell_blonde.png"
 })
 
 product4 = Product.new({
@@ -121,7 +121,7 @@ product4 = Product.new({
   "ideal_amount" => 10,
   "cost_price" => 1.90,
   "sell_price" => 3.50,
-  "image_path" => "/img/bottles/pilsner_urquell.jpg"
+  "image" => "pilsner_urquell.jpg"
 })
 
 product5 = Product.new({
@@ -135,7 +135,7 @@ product5 = Product.new({
   "ideal_amount" => 10,
   "cost_price" => 2.50,
   "sell_price" => 4.50,
-  "image_path" => "/img/bottles/krusovice.png"
+  "image" => "krusovice.png"
 })
 
 product6 = Product.new({
@@ -149,7 +149,7 @@ product6 = Product.new({
   "ideal_amount" => 10,
   "cost_price" => 2.50,
   "sell_price" => 4.50,
-  "image_path" => "/img/bottles/newcastle_summerale.jpg"
+  "image" => "newcastle_summerale.jpg"
 })
 
 product7 = Product.new({
@@ -163,7 +163,7 @@ product7 = Product.new({
   "ideal_amount" => 10,
   "cost_price" => 2.50,
   "sell_price" => 4.50,
-  "image_path" => "/img/bottles/delirium_red.jpg"
+  "image" => "delirium_red.jpg"
 })
 
 product8 = Product.new({
@@ -177,7 +177,7 @@ product8 = Product.new({
   "ideal_amount" => 10,
   "cost_price" => 2.50,
   "sell_price" => 4.50,
-  "image_path" => "/img/bottles/joker.png"
+  "image" => "joker.png"
 })
 
 product9 = Product.new({
@@ -191,7 +191,7 @@ product9 = Product.new({
   "ideal_amount" => 10,
   "cost_price" => 1.10,
   "sell_price" => 1.80,
-  "image_path" => "/img/bottles/orinoco_stout.png"
+  "image" => "orinoco_stout.png"
 })
 
 product10 = Product.new({
@@ -205,7 +205,7 @@ product10 = Product.new({
   "ideal_amount" => 10,
   "cost_price" => 1.00,
   "sell_price" => 1.80,
-  "image_path" => "/img/bottles/blood_of_the_unicorn.jpeg"
+  "image" => "blood_of_the_unicorn.jpeg"
 })
 
 product11 = Product.new({
@@ -219,7 +219,7 @@ product11 = Product.new({
   "ideal_amount" => 10,
   "cost_price" => 1.00,
   "sell_price" => 1.65,
-  "image_path" => "/img/bottles/birds_and_bees.png"
+  "image" => "birds_and_bees.png"
 })
 
 product12 = Product.new({
@@ -233,7 +233,7 @@ product12 = Product.new({
   "ideal_amount" => 10,
   "cost_price" => 1.00,
   "sell_price" => 1.65,
-  "image_path" => "/img/bottles/seven_giraffes.jpg"
+  "image" => "seven_giraffes.jpg"
 })
 
 product13 = Product.new({
@@ -247,7 +247,7 @@ product13 = Product.new({
   "ideal_amount" => 10,
   "cost_price" => 1.00,
   "sell_price" => 1.65,
-  "image_path" => "/img/bottles/ceasar_augustus.jpg"
+  "image" => "ceasar_augustus.jpg"
 })
 
 product14 = Product.new({
@@ -261,7 +261,7 @@ product14 = Product.new({
   "ideal_amount" => 10,
   "cost_price" => 1.00,
   "sell_price" => 1.65,
-  "image_path" => "/img/bottles/elvis_juice.jpg"
+  "image" => "elvis_juice.jpg"
 })
 
 product15 = Product.new({
@@ -275,7 +275,7 @@ product15 = Product.new({
   "ideal_amount" => 10,
   "cost_price" => 1.00,
   "sell_price" => 2.25,
-  "image_path" => "/img/bottles/samurai_ale.png"
+  "image" => "samurai_ale.png"
 })
 
 product16 = Product.new({
@@ -289,7 +289,7 @@ product16 = Product.new({
   "ideal_amount" => 10,
   "cost_price" => 1.00,
   "sell_price" => 2.25,
-  "image_path" => "/img/bottles/belhaven_best.jpg"
+  "image" => "belhaven_best.jpg"
 })
 
 product17 = Product.new({
@@ -303,7 +303,7 @@ product17 = Product.new({
   "ideal_amount" => 10,
   "cost_price" => 1.00,
   "sell_price" => 2.25,
-  "image_path" => "/img/bottles/heineken.jpg"
+  "image" => "heineken.jpg"
 })
 
 product18 = Product.new({
@@ -317,7 +317,7 @@ product18 = Product.new({
   "ideal_amount" => 10,
   "cost_price" => 1.00,
   "sell_price" => 2.25,
-  "image_path" => "/img/bottles/disco_forklift_truck.jpg"
+  "image" => "disco_forklift_truck.jpg"
 })
 
 product19 = Product.new({
@@ -331,7 +331,7 @@ product19 = Product.new({
   "ideal_amount" => 10,
   "cost_price" => 1.60,
   "sell_price" => 2.25,
-  "image_path" => "/img/bottles/bearface.jpg"
+  "image" => "bearface.jpg"
 })
 
 product20 = Product.new({
@@ -345,7 +345,7 @@ product20 = Product.new({
   "ideal_amount" => 10,
   "cost_price" => 1.60,
   "sell_price" => 1.95,
-  "image_path" => "/img/bottles/ax_man.png"
+  "image" => "ax_man.png"
 })
 
 product21 = Product.new({
@@ -359,7 +359,7 @@ product21 = Product.new({
   "ideal_amount" => 10,
   "cost_price" => 1.00,
   "sell_price" => 1.95,
-  "image_path" => "/img/bottles/outaspace.png"
+  "image" => "outaspace.png"
 })
 
 product22 = Product.new({
@@ -373,7 +373,7 @@ product22 = Product.new({
   "ideal_amount" => 10,
   "cost_price" => 1.00,
   "sell_price" => 1.95,
-  "image_path" => "/img/bottles/krusovice.png"
+  "image" => "krusovice.png"
 })
 
 product23 = Product.new({
@@ -387,7 +387,7 @@ product23 = Product.new({
   "ideal_amount" => 24,
   "cost_price" => 1.20,
   "sell_price" => 1.95,
-  "image_path" => "/img/bottles/innis_gunn.jpg"
+  "image" => "innis_gunn.jpg"
 })
 
 product24 = Product.new({
@@ -401,7 +401,7 @@ product24 = Product.new({
   "ideal_amount" => 100,
   "cost_price" => 1.80,
   "sell_price" => 4.40,
-  "image_path" => "/img/bottles/punk_ipa.jpg"
+  "image" => "punk_ipa.jpg"
 })
 
 product25 = Product.new({
@@ -415,7 +415,7 @@ product25 = Product.new({
   "ideal_amount" => 12,
   "cost_price" => 2.19,
   "sell_price" => 4.80,
-  "image_path" => "/img/bottles/jack_hammer.png"
+  "image" => "jack_hammer.png"
 })
 
 product26 = Product.new({
@@ -429,7 +429,7 @@ product26 = Product.new({
   "ideal_amount" => 100,
   "cost_price" => 1.79,
   "sell_price" => 4.80,
-  "image_path" => "/img/bottles/jet_black_hammer.jpg"
+  "image" => "jet_black_hammer.jpg"
 })
 
 product27 = Product.new({
@@ -443,7 +443,7 @@ product27 = Product.new({
   "ideal_amount" => 6,
   "cost_price" => 1.80,
   "sell_price" => 3.50,
-  "image_path" => "/img/bottles/sierra_nevada.png"
+  "image" => "sierra_nevada.png"
 })
 
 

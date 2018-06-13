@@ -27,5 +27,5 @@ CREATE TABLE products (
   ideal_amount INT2,
   cost_price decimal,
   sell_price decimal,
-  image_path varchar(255)
+  image varchar(255)
 );

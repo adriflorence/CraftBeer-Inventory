@@ -6,7 +6,7 @@ require_relative("category.rb")
 class Product
 
   attr_reader :id
-  attr_accessor :name, :manufacturer_id, :category_id, :description, :quantity, :alcohol_content, :volume, :ideal_amount, :shelf_life, :cost_price, :sell_price, :image_path
+  attr_accessor :name, :manufacturer_id, :category_id, :description, :quantity, :alcohol_content, :volume, :ideal_amount, :shelf_life, :cost_price, :sell_price, :image
 
   def initialize(options)
     @id = options['id'].to_i
@@ -20,14 +20,14 @@ class Product
     @ideal_amount = options['ideal_amount'].to_i
     @cost_price = options['cost_price'].to_f
     @sell_price = options['sell_price'].to_f
-    @image_path = options['image_path']
+    @image = options['image']
   end
 
   def save()
     sql = "INSERT INTO products
-    (name, manufacturer_id, category_id, description, quantity, alcohol_content, volume, ideal_amount, cost_price, sell_price, image_path) VALUES
+    (name, manufacturer_id, category_id, description, quantity, alcohol_content, volume, ideal_amount, cost_price, sell_price, image) VALUES
     ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING id"
-    values = [@name, @manufacturer_id, @category_id, @description, @quantity, @alcohol_content, @volume, @ideal_amount, @cost_price, @sell_price, @image_path]
+    values = [@name, @manufacturer_id, @category_id, @description, @quantity, @alcohol_content, @volume, @ideal_amount, @cost_price, @sell_price, @image]
     product_data = SqlRunner.run(sql, values)
     @id = product_data.first()['id'].to_i
   end
@@ -46,14 +46,14 @@ class Product
   end
 
   def update()
-    sql = "UPDATE products SET (name, manufacturer_id, category_id, quantity, alcohol_content, volume, description, ideal_amount, cost_price, sell_price, image_path) =
+    sql = "UPDATE products SET (name, manufacturer_id, category_id, quantity, alcohol_content, volume, description, ideal_amount, cost_price, sell_price, image) =
     ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) WHERE id = $12"
-    values = [@name, @manufacturer_id, @category_id, @quantity, @alcohol_content, @volume, @description, @ideal_amount, @cost_price, @sell_price, @image_path, @id]
+    values = [@name, @manufacturer_id, @category_id, @quantity, @alcohol_content, @volume, @description, @ideal_amount, @cost_price, @sell_price, @image, @id]
     SqlRunner.run(sql, values)
   end
 
   def self.all()
-    sql = "SELECT * FROM products"
+    sql = "SELECT * FROM products ORDER BY id"
     products = SqlRunner.run( sql )
     result = products.map { |product| Product.new( product ) }
     return result

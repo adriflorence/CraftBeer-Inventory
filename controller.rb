@@ -43,6 +43,13 @@ get '/categories/:id' do # LOOK UP CATEGORY
   erb(:category)
 end
 
+post '/categories/:id/delete' do # DELETE CATEGORY
+  id = params["id"].to_i
+  @category = Category.find(id)
+  @category.delete()
+  redirect to '/categories'
+end
+
 # # # #
 
 get '/manufacturers' do

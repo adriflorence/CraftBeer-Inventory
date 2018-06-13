@@ -3,7 +3,7 @@
   <div class="product_view" style="position:relative">
 
     <section class="product_image">
-        <img src="<%= @product.image_path%>"/>
+        <img src="/img/bottles/<%= @product.image%>"/>
     </section>
     <section class="product_content">
         <h1> <%= @product.name %> is delivered by <a href="/manufacturers/<%=@product.manufacturer_id%>"><%= @product.manufacturer.name %> </a></h1>
