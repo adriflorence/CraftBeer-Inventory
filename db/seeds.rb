@@ -154,7 +154,7 @@ product6 = Product.new({
 
 product7 = Product.new({
   "name" => "Delirium Red",
-  "manufacturer_id" => manufacturer13.id,
+  "manufacturer_id" => manufacturer14.id,
   "category_id" => category4.id,
   "description" => "Adri's favourite beer!",
   "alcohol_content" => "8.5%",
@@ -205,7 +205,7 @@ product10 = Product.new({
   "ideal_amount" => 10,
   "cost_price" => 1.00,
   "sell_price" => 1.80,
-  "image" => "blood_of_the_unicorn.jpeg"
+  "image" => "blood_of_the_unicorn.jpg"
 })
 
 product11 = Product.new({
@@ -237,7 +237,7 @@ product12 = Product.new({
 })
 
 product13 = Product.new({
-  "name" => "Ceasar Augustus",
+  "name" => "Caesar Augustus",
   "manufacturer_id" => manufacturer10.id,
   "category_id" => category8.id,
   "description" => "a Lager/IPA hybrid for those who cannot decide on their favourite Roman Emperor. Caesar? Augustus? Both!",
@@ -429,7 +429,7 @@ product26 = Product.new({
   "ideal_amount" => 100,
   "cost_price" => 1.79,
   "sell_price" => 4.80,
-  "image" => "jet_black_hammer.jpg"
+  "image" => "jet_black_heart.png"
 })
 
 product27 = Product.new({

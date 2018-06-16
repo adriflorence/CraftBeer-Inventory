@@ -1,6 +1,6 @@
 <article class="container">
   <span class="search_box">
-    <form method="get" action="/products/search">
+    <form method="get" action="/products">
 
       <label for="searchbox">Keyword:</label>
       <input id="searchbox" type="text" placeholder="Search.." name="keyword"/>
@@ -81,20 +81,5 @@
       </table>
 
   </div>
-  <section class="pagination">
 
-      <div>
-        <a href="/products?page=1" style="<%= 'visibility:hidden' if @page < 2%>"> first </a>
-      </div>
-      <div>
-          <a href="/products?page=<%= @page-1 %>" style="<%= 'visibility:hidden' if @page <= 1%>"> <%= @page-1 %> </a>
-
-          <a href="/products?page=<%= @page %>" style="font-size: 30px"> <%= @page %> </a>
-          <a href="/products?page=<%= @page+1 %>" style="<%= 'visibility:hidden' if @page >= @pages_needed%>"> <%= @page+1 %> </a>
-      </div>
-
-      <div>
-        <a href="/products?page=<%= @pages_needed %>" style="<%= 'visibility: hidden' if @page >= @pages_needed %>"> last </a>
-      </div>
-  </section>
 </article>

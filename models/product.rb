@@ -97,4 +97,14 @@ class Product
     return (@sell_price - @cost_price)*@quantity
   end
 
+  # # #
+
+  def self.search( search_field )
+    wildcard_search = "%" + search_field[:keyword].downcase + "%"
+    sql = "SELECT * FROM products WHERE LOWER(name) LIKE $1"
+    values = [wildcard_search]
+    results = SqlRunner.run(sql, values)
+    return results.map { |product| Product.new(product) }
+  end
+
 end

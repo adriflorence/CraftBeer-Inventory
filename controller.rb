@@ -99,6 +99,11 @@ get '/products' do
   erb(:products)
 end
 
+get '/products/search' do
+  @products = Product.search(params)
+  erb(:"search")
+end
+
 get '/products/new_product' do # CREATE PRODUCT
   @manufacturers = Manufacturer.all()
   @categories = Category.all()
