@@ -34,6 +34,7 @@ body {
   max-width: 1200px;
   margin: 50px auto 100px;
   background-color: #eee;
+  position: relative;
 }
 
 p {
@@ -351,6 +352,20 @@ table.full_stock_table a {
 table.full_stock_table input[type=image] {
   width: 30px !important;
   height: 30px !important;
+}
+
+/* SEARCH BOX */
+
+.search_box {
+  position: absolute;
+  width: 420px;
+  left: 10px;
+  margin-top: 5px;
+}
+
+.search_box input[type=search] {
+  height: 40px;
+  font-size: 18px;
 }
 
 
