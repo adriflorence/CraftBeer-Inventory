@@ -23,6 +23,9 @@ manufacturer13 = Manufacturer.new({"name" => "Kralovsky Pivovar", "country" => "
 manufacturer14 = Manufacturer.new({"name" => "Brouwerij Huyghe", "country" => "Belgium"})
 manufacturer15 = Manufacturer.new({"name" => "Innis & Gunn Brewery", "country" => "Scotland"})
 manufacturer16 = Manufacturer.new({"name" => "Sierra Nevada Brewing Co.", "country" => "U.S.A."})
+manufacturer17 = Manufacturer.new({"name" => "Staropramen Brewery", "country" => "Czech Republic"})
+
+
 
 manufacturer1.save()
 manufacturer2.save()
@@ -40,6 +43,7 @@ manufacturer13.save()
 manufacturer14.save()
 manufacturer15.save()
 manufacturer16.save()
+manufacturer17.save()
 
 
 category1 = Category.new({"name" => "APA", "image" => "apa.png"})
@@ -446,6 +450,91 @@ product27 = Product.new({
   "image" => "sierra_nevada.png"
 })
 
+product28 = Product.new({
+  "name" => "Staropramen",
+  "manufacturer_id" => manufacturer17.id,
+  "category_id" => category8.id,
+  "description" => "Dani kedvence!",
+  "alcohol_content" => "5.00%",
+  "quantity" => 20,
+  "volume" => "500ml",
+  "ideal_amount" => 6,
+  "cost_price" => 1.40,
+  "sell_price" => 3.50,
+  "image" => "staropramen.jpeg"
+})
+
+product29 = Product.new({
+  "name" => "Belhaven Stout",
+  "manufacturer_id" => manufacturer6.id,
+  "category_id" => category12.id,
+  "description" => "Daaark!",
+  "alcohol_content" => "4.20%",
+  "quantity" => 12,
+  "volume" => "500ml",
+  "ideal_amount" => 8,
+  "cost_price" => 1.80,
+  "sell_price" => 4.10,
+  "image" => "belhaven_stout.png"
+})
+
+product30 = Product.new({
+  "name" => "Belhaven Intergalactic",
+  "manufacturer_id" => manufacturer6.id,
+  "category_id" => category8.id,
+  "description" => "Rich sweet toffee, subtle malty finish",
+  "alcohol_content" => "5.00%",
+  "quantity" => 2,
+  "volume" => "500ml",
+  "ideal_amount" => 4,
+  "cost_price" => 1.40,
+  "sell_price" => 3.25,
+  "image" => "belhaven_intergalactic.png"
+})
+
+product31 = Product.new({
+  "name" => "Belhaven Wee Heavy",
+  "manufacturer_id" => manufacturer6.id,
+  "category_id" => category5.id,
+  "description" => " daaark and heavy!",
+  "alcohol_content" => "7.40%",
+  "quantity" => 4,
+  "volume" => "330ml",
+  "ideal_amount" => 4,
+  "cost_price" => 2.00,
+  "sell_price" => 5.10,
+  "image" => "belhaven_wee_heavy.png"
+})
+
+product32 = Product.new({
+  "name" => "Speyside",
+  "manufacturer_id" => manufacturer6.id,
+  "category_id" => category3.id,
+  "description" => "an oak-aged golden ale..yumm!",
+  "alcohol_content" => "6.50%",
+  "quantity" => 12,
+  "volume" => "500ml",
+  "ideal_amount" => 8,
+  "cost_price" => 1.60,
+  "sell_price" => 4.00,
+  "image" => "belhaven_speyside.jpg"
+})
+
+product33 = Product.new({
+  "name" => "Früli Strawberry",
+  "manufacturer_id" => manufacturer14.id,
+  "category_id" => category4.id,
+  "description" => "Louise's favourite",
+  "alcohol_content" => "4.10%",
+  "quantity" => 4,
+  "volume" => "330ml",
+  "ideal_amount" => 4,
+  "cost_price" => 1.60,
+  "sell_price" => 3.75,
+  "image" => "fruli_strawberry.jpg"
+})
+
+
 
 product1.save()
 product2.save()
@@ -474,3 +563,9 @@ product24.save()
 product25.save()
 product26.save()
 product27.save()
+product28.save()
+product29.save()
+product30.save()
+product31.save()
+product32.save()
+product33.save()

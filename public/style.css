@@ -327,6 +327,7 @@ table.full_stock_table {
 table.full_stock_table td {
   border-bottom: 1px solid #ccc;
   padding: 2px 10px;
+  text-align: left;
 }
 
 table.full_stock_table th {
@@ -345,7 +346,7 @@ table.full_stock_table a {
   color: black;
 }
 
-.text-center {
+table.full_stock_table .text-center {
   text-align: center;
 }
 

@@ -100,6 +100,8 @@ get '/products' do
 end
 
 get '/products/search' do
+  @page = 1
+  @pages_needed = Product.pages_needed()
   @products = Product.search(params)
   erb(:"search")
 end
